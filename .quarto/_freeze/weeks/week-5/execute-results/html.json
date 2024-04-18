@@ -1,0 +1,15 @@
+{
+  "hash": "a02ff0c8f40287ca065826c3552265df",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Week 5\"\nsubtitle: \"Linear Regression\"\nformat: html\n---\n\n\n\n\nContent coming soon...\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

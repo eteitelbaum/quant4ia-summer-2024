@@ -1,0 +1,15 @@
+{
+  "hash": "7c35a915e63455e6804ca66e56716a19",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Week 3\"\nsubtitle: \"Exploratory Data Anlysis\"\nformat: html\n---\n\n\n\n\nContent coming soon...\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

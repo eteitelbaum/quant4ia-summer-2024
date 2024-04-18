@@ -1,0 +1,15 @@
+---
+title: "Module 3.1"
+subtitle: "Distributions"
+format: 
+  html:
+    code-link: true
+highlight-style: atom-one
+execute:
+  echo: true
+  message: false
+  warning: false
+---
+
+Content coming soon...
+

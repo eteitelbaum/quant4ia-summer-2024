@@ -1,0 +1,15 @@
+{
+  "hash": "48a42ec4e8da139c2017189fe66f473f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Week 4\"\nsubtitle: \"Inference\"\nformat: html\n---\n\n\n\n\nContent coming soon...",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

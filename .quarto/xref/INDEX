@@ -1,0 +1,153 @@
+{
+  "index.qmd": {
+    "index.html": "02215262"
+  },
+  "course-links.qmd": {
+    "course-links.html": "82c107ff"
+  },
+  "slides/week-1.1.qmd": {
+    "week-1.1.html": "4ac3b7b6"
+  },
+  "slides/week-1.2.qmd": {
+    "week-1.2.html": "ce381291"
+  },
+  "slides/week-5.1.qmd": {
+    "week-5.1.html": "344a0f88"
+  },
+  "slides/week-7.1.qmd": {
+    "week-7.1.html": "eb148267"
+  },
+  "slides/week-9.2.qmd": {
+    "week-9.2.html": "ea643651"
+  },
+  "slides/week-3.1.qmd": {
+    "week-3.1.html": "c3cecdf7"
+  },
+  "slides/week-2.2.qmd": {
+    "week-2.2.html": "ae35a2fa"
+  },
+  "slides/week-4.2.qmd": {
+    "week-4.2.html": "a24a65c4"
+  },
+  "slides/week-6.1.qmd": {
+    "week-6.1.html": "8e373556"
+  },
+  "slides/zz_histograms.qmd": {
+    "zz_histograms.html": "a0122f79"
+  },
+  "slides/week-2.1.qmd": {
+    "week-2.1.html": "1306c27e"
+  },
+  "slides/week-3.2.qmd": {
+    "week-3.2.html": "074c89db"
+  },
+  "slides/week-4.1.qmd": {
+    "week-4.1.html": "cb4b8c7b"
+  },
+  "slides/week-5.2.qmd": {
+    "week-5.2.html": "9fd8c48e"
+  },
+  "slides/week-6.2.qmd": {
+    "week-6.2.html": "ed89561b"
+  },
+  "assignments/homework-3.qmd": {
+    "homework-3.html": "41e43937"
+  },
+  "project/project-description.qmd": {
+    "project-description.html": "e823eab3"
+  },
+  "modules/module-6.22.qmd": {
+    "module-6.22.html": "2f580035"
+  },
+  "modules/getting-started.qmd": {
+    "getting-started.html": "e3a38a58"
+  },
+  "modules/module-4.2.qmd": {
+    "module-4.2.html": "e3fee69a"
+  },
+  "modules/module-6.1.qmd": {
+    "module-6.1.html": "c0e99260"
+  },
+  "modules/module-4.1.qmd": {
+    "module-4.1.html": "c33b7041"
+  },
+  "modules/module-6.2.qmd": {
+    "module-6.2.html": "33fb8155"
+  },
+  "modules/module-3.1.qmd": {
+    "module-3.1.html": "d83f694e"
+  },
+  "modules/module-3.2.qmd": {
+    "module-3.2.html": "efde88cc"
+  },
+  "modules/module-5.1.qmd": {
+    "module-5.1.html": "c9d5f33b"
+  },
+  "modules/module-5.2.qmd": {
+    "module-5.2.html": "5f6d18a0"
+  },
+  "LICENSE.md": {
+    "LICENSE.html": "caf0b9db"
+  },
+  "assignments/homework-1.qmd": {
+    "homework-1.html": "75be46ef"
+  },
+  "assignments/homework-2.qmd": {
+    "homework-2.html": "91d5653a"
+  },
+  "weeks/week-6.qmd": {
+    "week-6.html": "c863e8c8"
+  },
+  "weeks/week-5.qmd": {
+    "week-5.html": "945c3a54"
+  },
+  "weeks/week-4.qmd": {
+    "week-4.html": "65f05b0f"
+  },
+  "weeks/week-1.qmd": {
+    "week-1.html": "b4e0c3df"
+  },
+  "weeks/week-3.qmd": {
+    "week-3.html": "e2e097e8"
+  },
+  "weeks/week-2.qmd": {
+    "week-2.html": "6e5137f0"
+  },
+  "weeks/week-z.qmd": {
+    "week-z.html": "2341b638"
+  },
+  "weeks/week-zz.qmd": {
+    "week-zz.html": "b83c943d"
+  },
+  "instructor.qmd": {
+    "instructor.html": "d909c709"
+  },
+  "project/project-datasets.qmd": {
+    "project-datasets.html": "3694d6bc"
+  },
+  "faq.qmd": {
+    "faq.html": "1b6d5987"
+  },
+  "course-support.qmd": {
+    "course-support.html": "8ce9d7f0"
+  },
+  "course-syllabus.qmd": {
+    "course-syllabus.html": "c782cc69",
+    "course-syllabus.tex": "0386b81c"
+  },
+  "modules/module-2.2.qmd": {
+    "module-2.2.html": "d6c910eb"
+  },
+  "modules/module-2.1.qmd": {
+    "module-2.1.html": "e5a4f041"
+  },
+  "modules/module-1.2.qmd": {
+    "module-1.2.html": "de1ebc86"
+  },
+  "modules/module-1.1.qmd": {
+    "module-1.1.html": "032f54d6"
+  },
+  "weeks/getting-started.qmd": {
+    "getting-started.html": "0f694193"
+  }
+}

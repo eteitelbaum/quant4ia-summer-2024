@@ -1,0 +1,12 @@
+---
+title: "Week 3"
+subtitle: "Distributions and Sampling"
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+source("../helper.R")
+```
+

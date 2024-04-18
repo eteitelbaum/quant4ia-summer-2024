@@ -1,0 +1,23 @@
+---
+title: "Week 2"
+subtitle: "Data Wrangling"
+format: html
+---
+
+::: {.callout-important}
+Quiz due by 11:59pm on `r advdate2(mon, 3)`. 
+:::
+
+## Readings
+
+| 📖 [r4ds, ch 3](https://r4ds.hadley.nz/data-transform.html)
+
+## Videos
+
+| 🖥 [Transforming Data with dplyr Verbs](https://youtu.be/ScQD47eJeAE)
+| 🖥 [Summarizing Data by Groups with dplyr Verbs](https://youtu.be/mgBwVzMV-v8)
+
+## Assignments
+
+| 📘 [Module 3 Quiz](https://blackboard.gwu.edu/ultra/courses/_394195_1/outline)
+

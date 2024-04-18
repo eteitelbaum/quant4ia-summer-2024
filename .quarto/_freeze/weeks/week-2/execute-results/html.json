@@ -1,0 +1,15 @@
+{
+  "hash": "bec821b8fa6ef19210eb10c9e34bf7b9",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Week 2\"\nsubtitle: \"Basic Data Visualization\"\nformat: html\n---\n\n\n\n\n::: {.callout-important}\nQuiz due by 11:59pm on Monday, June 3\n:::\n\n## Readings\n\n| 📖 [r4ds, ch 7](https://r4ds.hadley.nz/data-import)\n| 📖 [r4ds, ch 2](https://r4ds.hadley.nz/data-visualize.html)\n| 📖 [r4ds, 10.1 - 10.4](https://r4ds.hadley.nz/layers.html)\n| 📖 [r4ds, 12.2](https://r4ds.hadley.nz/communication.html)\n\n## Videos\n\n| 🖥 [Make a Bar Chart in R with ggplot2](https://youtu.be/QG1oDJPoIio)\n| 🖥 [Make a Histogram in R with ggplot2](https://youtu.be/-1YhCql-gMo)\n| 🖥 [Make a Line Chart in R with ggplot2](https://youtu.be/PnmQ2MFQpIc)\n| 🖥 [Make a Scatterplot in R with ggplot2](https://youtu.be/FiosjUVyfLM)\n\n## Assignments\n\n| 📘 [Module 2 Quiz](https://blackboard.gwu.edu/ultra/courses/_395476_1/cl/outline)\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,16 @@
+---
+title: "Module 6.1"
+subtitle: "Logistic Regression"
+format: 
+  html:
+    code-link: true
+highlight-style: atom-one
+execute:
+  echo: true
+  message: false
+  warning: false
+---
+
+Content coming soon...
+
+

@@ -1,1 +1,1 @@
-{"entries":[{"key":"sec-rstudio-setup","caption":"R and RStudio","order":{"number":1,"section":[0,1,0,0,0,0,0]}}],"headings":["sec-rstudio-setup","running-and-modifying-code","example-1-make-a-map","example-2-plotting-democracy-over-time","example-3-un-voting-trends","quarto"]}
+{"entries":[{"order":{"number":1,"section":[0,1,0,0,0,0,0]},"caption":"R and RStudio","key":"sec-rstudio-setup"}],"headings":["sec-rstudio-setup","running-and-modifying-code","example-1-make-a-map","example-2-plotting-democracy-over-time","example-3-un-voting-trends","quarto"]}

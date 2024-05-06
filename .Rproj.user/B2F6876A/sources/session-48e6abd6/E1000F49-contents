@@ -1,9 +1,0 @@
----
-title: "Module 1.2"
-subtitle: "Quarto and Markdown"
-format: html
-execute: 
-  echo: true
-  message: false
-  warning: false
----

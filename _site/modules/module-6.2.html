@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.533">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>IAFF 6501–Spring 2024 Schedule - Module 4.2</title>
+<title>IAFF 6501–Spring 2024 Schedule - Module 6.2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,10 +98,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<meta property="og:title" content="IAFF 6501–Spring 2024 Schedule - Module 4.2">
+<meta property="og:title" content="IAFF 6501–Spring 2024 Schedule - Module 6.2">
 <meta property="og:description" content="Regression Tables and Coefficient Plots">
 <meta property="og:site_name" content="IAFF 6501--Spring 2024 Schedule">
-<meta name="twitter:title" content="IAFF 6501–Spring 2024 Schedule - Module 4.2">
+<meta name="twitter:title" content="IAFF 6501–Spring 2024 Schedule - Module 6.2">
 <meta name="twitter:description" content="Regression Tables and Coefficient Plots">
 <meta name="twitter:card" content="summary">
 </head>
@@ -364,13 +364,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
 <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#run-a-regression-model-and-display-results-with-broom" id="toc-run-a-regression-model-and-display-results-with-broom" class="nav-link" data-scroll-target="#run-a-regression-model-and-display-results-with-broom">Run a regression model and display results with broom</a></li>
-  <li><a href="#run-many-regressions-and-display-with-modelsummary" id="toc-run-many-regressions-and-display-with-modelsummary" class="nav-link" data-scroll-target="#run-many-regressions-and-display-with-modelsummary">Run many regressions and display with modelsummary</a></li>
   <li><a href="#when-a-coefficient-plot-is-better" id="toc-when-a-coefficient-plot-is-better" class="nav-link" data-scroll-target="#when-a-coefficient-plot-is-better">When a coefficient plot is better</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/eteitelbaum/dataviz-summer-2023/edit/main/modules/module-6.2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/eteitelbaum/dataviz-summer-2023/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/module-1.1.html">Course Modules</a></li><li class="breadcrumb-item"><a href="../modules/module-6.2.html">Module 6.2</a></li></ol></nav><div class="quarto-title">
-<h1 class="title">Module 4.2</h1>
+<h1 class="title">Module 6.2</h1>
 <p class="subtitle lead">Regression Tables and Coefficient Plots</p>
 </div>
 
@@ -402,7 +401,7 @@ Prework
 </div>
 </div>
 <section id="overview" class="level2"><h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>A very common use of tables in the social sciences is to present regression results. There are numerous packages available for presenting regression output. In this lesson, we are going to focus on one of them that I think is particularly good for both pdf and html output: <code>modelsummary</code>. <code>modelsummary</code> also includes a function (<code><a href="https://modelsummary.com/reference/modelplot.html">modelplot()</a></code>) for plotting point estimates and confidence intervals. So part of the objective of this lesson is going to be to learn when you should use a table to present your regression results versus when you should use a plot.</p>
+<p>A very common use of tables in the social sciences is to present regression results. There are numerous packages available for presenting regression output. In this lesson, we are going to focus on one of them that I think is particularly good for both pdf and html output: <code>modelsummary</code>. <code>modelsummary</code> also includes a function (<code><a href="https://modelsummary.com/man/modelplot.html">modelplot()</a></code>) for plotting point estimates and confidence intervals. So part of the objective of this lesson is going to be to learn when you should use a table to present your regression results versus when you should use a plot.</p>
 <p>We will be taking our example from the peace studies literature. We are going to download data using the <code>peacesciencer</code> package and use it to partially reproduce a famous analysis of conflict onset by <a href="https://www-jstor-org.proxygw.wrlc.org/stable/3118222">Fearon and Laitin</a>.</p>
 </section><section id="run-a-regression-model-and-display-results-with-broom" class="level2"><h2 class="anchored" data-anchor-id="run-a-regression-model-and-display-results-with-broom">Run a regression model and display results with broom</h2>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/upn8dlhvbns" title="Make regression tables with broom" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
@@ -479,8 +478,7 @@ $ newlmtnest     &lt;dbl&gt; 3.214868, 3.214868, 3.214868, 3.214868, 3.214868, 3
 7 wbpopest         0.293     0.0673     4.35  0.00001   0.162      0.426</code></pre>
 </div>
 </div>
-<p>How did we do relative to Fearon and Latin’s original analysis. Well, one thing that F&amp;L were pretty certain about is that ethnic and religious fractionalization <em>do not</em> matter for conflict onset. But here we find a statistically significant relationship between these variables and conflict onset. But one thing we do find in common with their analysis is the importance of wealth and population. Both of these variables are significant in the expected direction. Wealthier countries experience less risk of conflict onset while more populous ones have a higher risk.</p>
-</section><section id="run-many-regressions-and-display-with-modelsummary" class="level2"><h2 class="anchored" data-anchor-id="run-many-regressions-and-display-with-modelsummary">Run many regressions and display with modelsummary</h2>
+<p>How did we do relative to Fearon and Latin’s original analysis. Well, one thing that F&amp;L were pretty certain about is that ethnic and religious fractionalization <em>do not</em> matter for conflict onset. But here we find a statistically significant relationship between these variables and conflict onset. But one thing we do find in common with their analysis is the importance of wealth and population. Both of these variables are significant in the expected direction. Wealthier countries experience less risk of conflict onset while more populous ones have a higher risk. ## Run many regressions and display with modelsummary</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/My6_X6x5TZw" title="Display multiple models with modelsummary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <p><code>broom</code> is really great if we want to just run one regression and see the results in the context of a working document. But what if we want to display our results to other researchers? For this, we need to use a different package. One package that is really good at producing professional-looking tabels is <code>modelsummary</code> and one of its strongest features is the ability to combine multiple models into the same table while still allowing for substantial customization.</p>
 <p>Let’s go ahead and store four models. In the first three, we will feature sets of predictors (ethnicity, democracy and terrain) and then a final model that includes all of our predictors. In each model, we will include wealth (GDP) and population as controls because we have a feeling that these are robust predictors of conflict onset.</p>
@@ -520,11 +518,11 @@ $ newlmtnest     &lt;dbl&gt; 3.214868, 3.214868, 3.214868, 3.214868, 3.214868, 3
 <span><span class="va">caption</span> <span class="op">=</span> <span class="st">"Table 1: Predictors of Conflict Onset"</span> <span class="co"># store caption</span></span>
 <span><span class="va">reference</span> <span class="op">=</span> <span class="st">"See appendix for data sources."</span>      <span class="co"># store reference notes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Now we can call <code><a href="https://modelsummary.com/reference/modelsummary.html">modelsummary()</a></code>. The first argument is the list of models we want to display. Next we tell <code>modelsummary</code> that we want it to show stars for statistical significance (<code>stars = TRUE</code>). And in <code>gof_map</code>, we say that, of the many goodness of fit statistics available to us, we only want to include the number of observations. Finally we plug our title into <code>title =</code> and a source note into <code>notes =</code>.</p>
+<p>Now we can call <code><a href="https://modelsummary.com/man/modelsummary.html">modelsummary()</a></code>. The first argument is the list of models we want to display. Next we tell <code>modelsummary</code> that we want it to show stars for statistical significance (<code>stars = TRUE</code>). And in <code>gof_map</code>, we say that, of the many goodness of fit statistics available to us, we only want to include the number of observations. Finally we plug our title into <code>title =</code> and a source note into <code>notes =</code>.</p>
 <div class="cell">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://modelsummary.com">modelsummary</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://modelsummary.com/reference/modelsummary.html">modelsummary</a></span><span class="op">(</span><span class="va">models</span>,                      <span class="co"># display the table</span></span>
+<span><span class="fu"><a href="https://modelsummary.com/man/modelsummary.html">modelsummary</a></span><span class="op">(</span><span class="va">models</span>,                      <span class="co"># display the table</span></span>
 <span>             stars <span class="op">=</span> <span class="cn">TRUE</span>,                <span class="co"># include stars for significance</span></span>
 <span>             gof_map <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"nobs"</span><span class="op">)</span>,         <span class="co"># goodness of fit stats to include   </span></span>
 <span>             coef_map <span class="op">=</span> <span class="va">coef_map</span>,         <span class="co"># coefficient mapping</span></span>
@@ -536,15 +534,15 @@ $ newlmtnest     &lt;dbl&gt; 3.214868, 3.214868, 3.214868, 3.214868, 3.214868, 3
   
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>tinytable_krzzxct0t79bmigj2f3r</title>
+<title>tinytable_945nhznfudxn4fr6rddh</title>
 <style>
-.table td.tinytable_css_s9axqkg08h1w5jwy2n12, .table th.tinytable_css_s9axqkg08h1w5jwy2n12 {    border-bottom: solid 0.1em #d3d8dc; }
-.table td.tinytable_css_aoydcau6ulfqd6982vk2, .table th.tinytable_css_aoydcau6ulfqd6982vk2 {    text-align: left; }
-.table td.tinytable_css_zmvz8velit00b0yoiwnh, .table th.tinytable_css_zmvz8velit00b0yoiwnh {    text-align: center; }
-.table td.tinytable_css_65um9eo1ah2u653ro0v3, .table th.tinytable_css_65um9eo1ah2u653ro0v3 {    text-align: center; }
-.table td.tinytable_css_e7lxmg3ni4qovw9xeh3f, .table th.tinytable_css_e7lxmg3ni4qovw9xeh3f {    text-align: center; }
-.table td.tinytable_css_vcd9tyvbyaenoca5ha7q, .table th.tinytable_css_vcd9tyvbyaenoca5ha7q {    text-align: center; }
-.table td.tinytable_css_g858yujwtpg0x6mr05o7, .table th.tinytable_css_g858yujwtpg0x6mr05o7 {    border-bottom: solid 0.05em black; }
+.table td.tinytable_css_h103erk0zzyie9lxzvje, .table th.tinytable_css_h103erk0zzyie9lxzvje {    border-bottom: solid 0.1em #d3d8dc; }
+.table td.tinytable_css_05esccs6mj0e2ljcixdm, .table th.tinytable_css_05esccs6mj0e2ljcixdm {    text-align: left; }
+.table td.tinytable_css_43ap0715xtibmf6gjcr6, .table th.tinytable_css_43ap0715xtibmf6gjcr6 {    text-align: center; }
+.table td.tinytable_css_4xn98hmtcuv0vyvtzuhb, .table th.tinytable_css_4xn98hmtcuv0vyvtzuhb {    text-align: center; }
+.table td.tinytable_css_377071dc62v04rz22vq7, .table th.tinytable_css_377071dc62v04rz22vq7 {    text-align: center; }
+.table td.tinytable_css_i9texifw3w4r6voh0slg, .table th.tinytable_css_i9texifw3w4r6voh0slg {    text-align: center; }
+.table td.tinytable_css_4gde7tbyxw7d2wwpvnst, .table th.tinytable_css_4gde7tbyxw7d2wwpvnst {    border-bottom: solid 0.05em black; }
     </style>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>
     MathJax = {
@@ -556,7 +554,7 @@ $ newlmtnest     &lt;dbl&gt; 3.214868, 3.214868, 3.214868, 3.214868, 3.214868, 3
       }
     };
     </script><div class="container">
-      <table class="table table-borderless" id="tinytable_krzzxct0t79bmigj2f3r" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_945nhznfudxn4fr6rddh" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
 <thead>
 </thead><caption>Table 1: Predictors of Conflict Onset</caption>
               <tbody><tr>
@@ -682,12 +680,12 @@ $ newlmtnest     &lt;dbl&gt; 3.214868, 3.214868, 3.214868, 3.214868, 3.214868, 3
 </div>
 
     <script>
-      function styleCell_tinytable_05ttzn79kv2xmb6ns7i0(i, j, css_id) {
-        var table = document.getElementById("tinytable_krzzxct0t79bmigj2f3r");
+      function styleCell_tinytable_o6kg1btsd58aor1wwsr4(i, j, css_id) {
+        var table = document.getElementById("tinytable_945nhznfudxn4fr6rddh");
         table.rows[i].cells[j].classList.add(css_id);
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_krzzxct0t79bmigj2f3r');
+        var table = document.getElementById('tinytable_945nhznfudxn4fr6rddh');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -695,8 +693,8 @@ $ newlmtnest     &lt;dbl&gt; 3.214868, 3.214868, 3.214868, 3.214868, 3.214868, 3
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_tinytable_05ttzn79kv2xmb6ns7i0(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_krzzxct0t79bmigj2f3r");
+      function spanCell_tinytable_o6kg1btsd58aor1wwsr4(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_945nhznfudxn4fr6rddh");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -723,96 +721,96 @@ $ newlmtnest     &lt;dbl&gt; 3.214868, 3.214868, 3.214868, 3.214868, 3.214868, 3
         targetCell.colSpan = colspan;
       }
 
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(0, 0, 'tinytable_css_s9axqkg08h1w5jwy2n12') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(0, 1, 'tinytable_css_s9axqkg08h1w5jwy2n12') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(0, 2, 'tinytable_css_s9axqkg08h1w5jwy2n12') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(0, 3, 'tinytable_css_s9axqkg08h1w5jwy2n12') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(0, 4, 'tinytable_css_s9axqkg08h1w5jwy2n12') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(0, 0, 'tinytable_css_aoydcau6ulfqd6982vk2') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(1, 0, 'tinytable_css_aoydcau6ulfqd6982vk2') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(2, 0, 'tinytable_css_aoydcau6ulfqd6982vk2') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(3, 0, 'tinytable_css_aoydcau6ulfqd6982vk2') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(4, 0, 'tinytable_css_aoydcau6ulfqd6982vk2') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(5, 0, 'tinytable_css_aoydcau6ulfqd6982vk2') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(6, 0, 'tinytable_css_aoydcau6ulfqd6982vk2') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(7, 0, 'tinytable_css_aoydcau6ulfqd6982vk2') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(8, 0, 'tinytable_css_aoydcau6ulfqd6982vk2') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(9, 0, 'tinytable_css_aoydcau6ulfqd6982vk2') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(10, 0, 'tinytable_css_aoydcau6ulfqd6982vk2') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(11, 0, 'tinytable_css_aoydcau6ulfqd6982vk2') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(12, 0, 'tinytable_css_aoydcau6ulfqd6982vk2') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(13, 0, 'tinytable_css_aoydcau6ulfqd6982vk2') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(14, 0, 'tinytable_css_aoydcau6ulfqd6982vk2') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(15, 0, 'tinytable_css_aoydcau6ulfqd6982vk2') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(0, 1, 'tinytable_css_zmvz8velit00b0yoiwnh') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(1, 1, 'tinytable_css_zmvz8velit00b0yoiwnh') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(2, 1, 'tinytable_css_zmvz8velit00b0yoiwnh') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(3, 1, 'tinytable_css_zmvz8velit00b0yoiwnh') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(4, 1, 'tinytable_css_zmvz8velit00b0yoiwnh') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(5, 1, 'tinytable_css_zmvz8velit00b0yoiwnh') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(6, 1, 'tinytable_css_zmvz8velit00b0yoiwnh') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(7, 1, 'tinytable_css_zmvz8velit00b0yoiwnh') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(8, 1, 'tinytable_css_zmvz8velit00b0yoiwnh') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(9, 1, 'tinytable_css_zmvz8velit00b0yoiwnh') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(10, 1, 'tinytable_css_zmvz8velit00b0yoiwnh') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(11, 1, 'tinytable_css_zmvz8velit00b0yoiwnh') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(12, 1, 'tinytable_css_zmvz8velit00b0yoiwnh') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(13, 1, 'tinytable_css_zmvz8velit00b0yoiwnh') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(14, 1, 'tinytable_css_zmvz8velit00b0yoiwnh') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(15, 1, 'tinytable_css_zmvz8velit00b0yoiwnh') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(0, 2, 'tinytable_css_65um9eo1ah2u653ro0v3') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(1, 2, 'tinytable_css_65um9eo1ah2u653ro0v3') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(2, 2, 'tinytable_css_65um9eo1ah2u653ro0v3') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(3, 2, 'tinytable_css_65um9eo1ah2u653ro0v3') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(4, 2, 'tinytable_css_65um9eo1ah2u653ro0v3') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(5, 2, 'tinytable_css_65um9eo1ah2u653ro0v3') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(6, 2, 'tinytable_css_65um9eo1ah2u653ro0v3') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(7, 2, 'tinytable_css_65um9eo1ah2u653ro0v3') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(8, 2, 'tinytable_css_65um9eo1ah2u653ro0v3') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(9, 2, 'tinytable_css_65um9eo1ah2u653ro0v3') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(10, 2, 'tinytable_css_65um9eo1ah2u653ro0v3') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(11, 2, 'tinytable_css_65um9eo1ah2u653ro0v3') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(12, 2, 'tinytable_css_65um9eo1ah2u653ro0v3') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(13, 2, 'tinytable_css_65um9eo1ah2u653ro0v3') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(14, 2, 'tinytable_css_65um9eo1ah2u653ro0v3') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(15, 2, 'tinytable_css_65um9eo1ah2u653ro0v3') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(0, 3, 'tinytable_css_e7lxmg3ni4qovw9xeh3f') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(1, 3, 'tinytable_css_e7lxmg3ni4qovw9xeh3f') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(2, 3, 'tinytable_css_e7lxmg3ni4qovw9xeh3f') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(3, 3, 'tinytable_css_e7lxmg3ni4qovw9xeh3f') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(4, 3, 'tinytable_css_e7lxmg3ni4qovw9xeh3f') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(5, 3, 'tinytable_css_e7lxmg3ni4qovw9xeh3f') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(6, 3, 'tinytable_css_e7lxmg3ni4qovw9xeh3f') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(7, 3, 'tinytable_css_e7lxmg3ni4qovw9xeh3f') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(8, 3, 'tinytable_css_e7lxmg3ni4qovw9xeh3f') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(9, 3, 'tinytable_css_e7lxmg3ni4qovw9xeh3f') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(10, 3, 'tinytable_css_e7lxmg3ni4qovw9xeh3f') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(11, 3, 'tinytable_css_e7lxmg3ni4qovw9xeh3f') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(12, 3, 'tinytable_css_e7lxmg3ni4qovw9xeh3f') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(13, 3, 'tinytable_css_e7lxmg3ni4qovw9xeh3f') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(14, 3, 'tinytable_css_e7lxmg3ni4qovw9xeh3f') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(15, 3, 'tinytable_css_e7lxmg3ni4qovw9xeh3f') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(0, 4, 'tinytable_css_vcd9tyvbyaenoca5ha7q') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(1, 4, 'tinytable_css_vcd9tyvbyaenoca5ha7q') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(2, 4, 'tinytable_css_vcd9tyvbyaenoca5ha7q') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(3, 4, 'tinytable_css_vcd9tyvbyaenoca5ha7q') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(4, 4, 'tinytable_css_vcd9tyvbyaenoca5ha7q') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(5, 4, 'tinytable_css_vcd9tyvbyaenoca5ha7q') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(6, 4, 'tinytable_css_vcd9tyvbyaenoca5ha7q') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(7, 4, 'tinytable_css_vcd9tyvbyaenoca5ha7q') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(8, 4, 'tinytable_css_vcd9tyvbyaenoca5ha7q') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(9, 4, 'tinytable_css_vcd9tyvbyaenoca5ha7q') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(10, 4, 'tinytable_css_vcd9tyvbyaenoca5ha7q') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(11, 4, 'tinytable_css_vcd9tyvbyaenoca5ha7q') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(12, 4, 'tinytable_css_vcd9tyvbyaenoca5ha7q') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(13, 4, 'tinytable_css_vcd9tyvbyaenoca5ha7q') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(14, 4, 'tinytable_css_vcd9tyvbyaenoca5ha7q') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(15, 4, 'tinytable_css_vcd9tyvbyaenoca5ha7q') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(14, 0, 'tinytable_css_g858yujwtpg0x6mr05o7') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(14, 1, 'tinytable_css_g858yujwtpg0x6mr05o7') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(14, 2, 'tinytable_css_g858yujwtpg0x6mr05o7') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(14, 3, 'tinytable_css_g858yujwtpg0x6mr05o7') })
-window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb6ns7i0(14, 4, 'tinytable_css_g858yujwtpg0x6mr05o7') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(0, 0, 'tinytable_css_h103erk0zzyie9lxzvje') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(0, 1, 'tinytable_css_h103erk0zzyie9lxzvje') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(0, 2, 'tinytable_css_h103erk0zzyie9lxzvje') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(0, 3, 'tinytable_css_h103erk0zzyie9lxzvje') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(0, 4, 'tinytable_css_h103erk0zzyie9lxzvje') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(0, 0, 'tinytable_css_05esccs6mj0e2ljcixdm') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(1, 0, 'tinytable_css_05esccs6mj0e2ljcixdm') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(2, 0, 'tinytable_css_05esccs6mj0e2ljcixdm') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(3, 0, 'tinytable_css_05esccs6mj0e2ljcixdm') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(4, 0, 'tinytable_css_05esccs6mj0e2ljcixdm') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(5, 0, 'tinytable_css_05esccs6mj0e2ljcixdm') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(6, 0, 'tinytable_css_05esccs6mj0e2ljcixdm') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(7, 0, 'tinytable_css_05esccs6mj0e2ljcixdm') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(8, 0, 'tinytable_css_05esccs6mj0e2ljcixdm') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(9, 0, 'tinytable_css_05esccs6mj0e2ljcixdm') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(10, 0, 'tinytable_css_05esccs6mj0e2ljcixdm') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(11, 0, 'tinytable_css_05esccs6mj0e2ljcixdm') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(12, 0, 'tinytable_css_05esccs6mj0e2ljcixdm') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(13, 0, 'tinytable_css_05esccs6mj0e2ljcixdm') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(14, 0, 'tinytable_css_05esccs6mj0e2ljcixdm') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(15, 0, 'tinytable_css_05esccs6mj0e2ljcixdm') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(0, 1, 'tinytable_css_43ap0715xtibmf6gjcr6') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(1, 1, 'tinytable_css_43ap0715xtibmf6gjcr6') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(2, 1, 'tinytable_css_43ap0715xtibmf6gjcr6') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(3, 1, 'tinytable_css_43ap0715xtibmf6gjcr6') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(4, 1, 'tinytable_css_43ap0715xtibmf6gjcr6') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(5, 1, 'tinytable_css_43ap0715xtibmf6gjcr6') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(6, 1, 'tinytable_css_43ap0715xtibmf6gjcr6') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(7, 1, 'tinytable_css_43ap0715xtibmf6gjcr6') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(8, 1, 'tinytable_css_43ap0715xtibmf6gjcr6') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(9, 1, 'tinytable_css_43ap0715xtibmf6gjcr6') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(10, 1, 'tinytable_css_43ap0715xtibmf6gjcr6') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(11, 1, 'tinytable_css_43ap0715xtibmf6gjcr6') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(12, 1, 'tinytable_css_43ap0715xtibmf6gjcr6') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(13, 1, 'tinytable_css_43ap0715xtibmf6gjcr6') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(14, 1, 'tinytable_css_43ap0715xtibmf6gjcr6') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(15, 1, 'tinytable_css_43ap0715xtibmf6gjcr6') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(0, 2, 'tinytable_css_4xn98hmtcuv0vyvtzuhb') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(1, 2, 'tinytable_css_4xn98hmtcuv0vyvtzuhb') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(2, 2, 'tinytable_css_4xn98hmtcuv0vyvtzuhb') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(3, 2, 'tinytable_css_4xn98hmtcuv0vyvtzuhb') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(4, 2, 'tinytable_css_4xn98hmtcuv0vyvtzuhb') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(5, 2, 'tinytable_css_4xn98hmtcuv0vyvtzuhb') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(6, 2, 'tinytable_css_4xn98hmtcuv0vyvtzuhb') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(7, 2, 'tinytable_css_4xn98hmtcuv0vyvtzuhb') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(8, 2, 'tinytable_css_4xn98hmtcuv0vyvtzuhb') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(9, 2, 'tinytable_css_4xn98hmtcuv0vyvtzuhb') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(10, 2, 'tinytable_css_4xn98hmtcuv0vyvtzuhb') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(11, 2, 'tinytable_css_4xn98hmtcuv0vyvtzuhb') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(12, 2, 'tinytable_css_4xn98hmtcuv0vyvtzuhb') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(13, 2, 'tinytable_css_4xn98hmtcuv0vyvtzuhb') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(14, 2, 'tinytable_css_4xn98hmtcuv0vyvtzuhb') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(15, 2, 'tinytable_css_4xn98hmtcuv0vyvtzuhb') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(0, 3, 'tinytable_css_377071dc62v04rz22vq7') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(1, 3, 'tinytable_css_377071dc62v04rz22vq7') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(2, 3, 'tinytable_css_377071dc62v04rz22vq7') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(3, 3, 'tinytable_css_377071dc62v04rz22vq7') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(4, 3, 'tinytable_css_377071dc62v04rz22vq7') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(5, 3, 'tinytable_css_377071dc62v04rz22vq7') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(6, 3, 'tinytable_css_377071dc62v04rz22vq7') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(7, 3, 'tinytable_css_377071dc62v04rz22vq7') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(8, 3, 'tinytable_css_377071dc62v04rz22vq7') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(9, 3, 'tinytable_css_377071dc62v04rz22vq7') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(10, 3, 'tinytable_css_377071dc62v04rz22vq7') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(11, 3, 'tinytable_css_377071dc62v04rz22vq7') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(12, 3, 'tinytable_css_377071dc62v04rz22vq7') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(13, 3, 'tinytable_css_377071dc62v04rz22vq7') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(14, 3, 'tinytable_css_377071dc62v04rz22vq7') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(15, 3, 'tinytable_css_377071dc62v04rz22vq7') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(0, 4, 'tinytable_css_i9texifw3w4r6voh0slg') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(1, 4, 'tinytable_css_i9texifw3w4r6voh0slg') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(2, 4, 'tinytable_css_i9texifw3w4r6voh0slg') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(3, 4, 'tinytable_css_i9texifw3w4r6voh0slg') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(4, 4, 'tinytable_css_i9texifw3w4r6voh0slg') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(5, 4, 'tinytable_css_i9texifw3w4r6voh0slg') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(6, 4, 'tinytable_css_i9texifw3w4r6voh0slg') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(7, 4, 'tinytable_css_i9texifw3w4r6voh0slg') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(8, 4, 'tinytable_css_i9texifw3w4r6voh0slg') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(9, 4, 'tinytable_css_i9texifw3w4r6voh0slg') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(10, 4, 'tinytable_css_i9texifw3w4r6voh0slg') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(11, 4, 'tinytable_css_i9texifw3w4r6voh0slg') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(12, 4, 'tinytable_css_i9texifw3w4r6voh0slg') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(13, 4, 'tinytable_css_i9texifw3w4r6voh0slg') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(14, 4, 'tinytable_css_i9texifw3w4r6voh0slg') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(15, 4, 'tinytable_css_i9texifw3w4r6voh0slg') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(14, 0, 'tinytable_css_4gde7tbyxw7d2wwpvnst') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(14, 1, 'tinytable_css_4gde7tbyxw7d2wwpvnst') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(14, 2, 'tinytable_css_4gde7tbyxw7d2wwpvnst') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(14, 3, 'tinytable_css_4gde7tbyxw7d2wwpvnst') })
+window.addEventListener('load', function () { styleCell_tinytable_o6kg1btsd58aor1wwsr4(14, 4, 'tinytable_css_4gde7tbyxw7d2wwpvnst') })
     </script>
 </div>
 </div>
@@ -820,7 +818,7 @@ window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/gif_wkqyub8" title="Display regression results with a plot" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <p>A regression table is great when we have many models that we want to display. But what happens when we have just one model? We could present something like our earlier <code><a href="https://generics.r-lib.org/reference/tidy.html">tidy()</a></code> output which has the beta coefficient, the standard error, t-statistic and p-values in separate columns, but this would be unconventional and would take up a lot of space. Another option is just to present a table with one column like this:</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://modelsummary.com/reference/modelsummary.html">modelsummary</a></span><span class="op">(</span><span class="va">conflict_model</span>, </span>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://modelsummary.com/man/modelsummary.html">modelsummary</a></span><span class="op">(</span><span class="va">conflict_model</span>, </span>
 <span>             stars <span class="op">=</span> <span class="cn">TRUE</span>,  </span>
 <span>             gof_map <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"nobs"</span><span class="op">)</span>,</span>
 <span>             coef_map <span class="op">=</span> <span class="va">coef_map</span>,</span>
@@ -832,12 +830,12 @@ window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb
   
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>tinytable_znj255mchso4q4jpnd0d</title>
+<title>tinytable_qhg3artj4z2z3jgex4pp</title>
 <style>
-.table td.tinytable_css_8stzinontpmfbuuqsjtc, .table th.tinytable_css_8stzinontpmfbuuqsjtc {    border-bottom: solid 0.1em #d3d8dc; }
-.table td.tinytable_css_wf0lyg2b8dkdz2zxmxgc, .table th.tinytable_css_wf0lyg2b8dkdz2zxmxgc {    text-align: left; }
-.table td.tinytable_css_27reahckjkr7juyie2iu, .table th.tinytable_css_27reahckjkr7juyie2iu {    text-align: center; }
-.table td.tinytable_css_wm40v90d4ck1bp9g6nt6, .table th.tinytable_css_wm40v90d4ck1bp9g6nt6 {    border-bottom: solid 0.05em black; }
+.table td.tinytable_css_rb52j4yibzb041r95dfs, .table th.tinytable_css_rb52j4yibzb041r95dfs {    border-bottom: solid 0.1em #d3d8dc; }
+.table td.tinytable_css_ytx3q9sj5kwbxadz05lo, .table th.tinytable_css_ytx3q9sj5kwbxadz05lo {    text-align: left; }
+.table td.tinytable_css_ofta3p38kbx6ayxq9x2g, .table th.tinytable_css_ofta3p38kbx6ayxq9x2g {    text-align: center; }
+.table td.tinytable_css_jjix1rmio984w3a9l1g7, .table th.tinytable_css_jjix1rmio984w3a9l1g7 {    border-bottom: solid 0.05em black; }
     </style>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>
     MathJax = {
@@ -849,7 +847,7 @@ window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb
       }
     };
     </script><div class="container">
-      <table class="table table-borderless" id="tinytable_znj255mchso4q4jpnd0d" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_qhg3artj4z2z3jgex4pp" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
 <thead>
 </thead><caption>Table 1: Predictors of Conflict Onset</caption>
               <tbody><tr>
@@ -927,12 +925,12 @@ window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb
 </div>
 
     <script>
-      function styleCell_tinytable_lzv74oe6pktdm2o65cpa(i, j, css_id) {
-        var table = document.getElementById("tinytable_znj255mchso4q4jpnd0d");
+      function styleCell_tinytable_fl7gnu76tyhe8jjm2dse(i, j, css_id) {
+        var table = document.getElementById("tinytable_qhg3artj4z2z3jgex4pp");
         table.rows[i].cells[j].classList.add(css_id);
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_znj255mchso4q4jpnd0d');
+        var table = document.getElementById('tinytable_qhg3artj4z2z3jgex4pp');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -940,8 +938,8 @@ window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_tinytable_lzv74oe6pktdm2o65cpa(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_znj255mchso4q4jpnd0d");
+      function spanCell_tinytable_fl7gnu76tyhe8jjm2dse(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_qhg3artj4z2z3jgex4pp");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -968,47 +966,47 @@ window.addEventListener('load', function () { styleCell_tinytable_05ttzn79kv2xmb
         targetCell.colSpan = colspan;
       }
 
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(0, 0, 'tinytable_css_8stzinontpmfbuuqsjtc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(0, 1, 'tinytable_css_8stzinontpmfbuuqsjtc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(0, 0, 'tinytable_css_wf0lyg2b8dkdz2zxmxgc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(1, 0, 'tinytable_css_wf0lyg2b8dkdz2zxmxgc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(2, 0, 'tinytable_css_wf0lyg2b8dkdz2zxmxgc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(3, 0, 'tinytable_css_wf0lyg2b8dkdz2zxmxgc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(4, 0, 'tinytable_css_wf0lyg2b8dkdz2zxmxgc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(5, 0, 'tinytable_css_wf0lyg2b8dkdz2zxmxgc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(6, 0, 'tinytable_css_wf0lyg2b8dkdz2zxmxgc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(7, 0, 'tinytable_css_wf0lyg2b8dkdz2zxmxgc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(8, 0, 'tinytable_css_wf0lyg2b8dkdz2zxmxgc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(9, 0, 'tinytable_css_wf0lyg2b8dkdz2zxmxgc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(10, 0, 'tinytable_css_wf0lyg2b8dkdz2zxmxgc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(11, 0, 'tinytable_css_wf0lyg2b8dkdz2zxmxgc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(12, 0, 'tinytable_css_wf0lyg2b8dkdz2zxmxgc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(13, 0, 'tinytable_css_wf0lyg2b8dkdz2zxmxgc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(14, 0, 'tinytable_css_wf0lyg2b8dkdz2zxmxgc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(15, 0, 'tinytable_css_wf0lyg2b8dkdz2zxmxgc') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(0, 1, 'tinytable_css_27reahckjkr7juyie2iu') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(1, 1, 'tinytable_css_27reahckjkr7juyie2iu') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(2, 1, 'tinytable_css_27reahckjkr7juyie2iu') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(3, 1, 'tinytable_css_27reahckjkr7juyie2iu') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(4, 1, 'tinytable_css_27reahckjkr7juyie2iu') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(5, 1, 'tinytable_css_27reahckjkr7juyie2iu') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(6, 1, 'tinytable_css_27reahckjkr7juyie2iu') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(7, 1, 'tinytable_css_27reahckjkr7juyie2iu') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(8, 1, 'tinytable_css_27reahckjkr7juyie2iu') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(9, 1, 'tinytable_css_27reahckjkr7juyie2iu') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(10, 1, 'tinytable_css_27reahckjkr7juyie2iu') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(11, 1, 'tinytable_css_27reahckjkr7juyie2iu') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(12, 1, 'tinytable_css_27reahckjkr7juyie2iu') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(13, 1, 'tinytable_css_27reahckjkr7juyie2iu') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(14, 1, 'tinytable_css_27reahckjkr7juyie2iu') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(15, 1, 'tinytable_css_27reahckjkr7juyie2iu') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(14, 0, 'tinytable_css_wm40v90d4ck1bp9g6nt6') })
-window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2o65cpa(14, 1, 'tinytable_css_wm40v90d4ck1bp9g6nt6') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(0, 0, 'tinytable_css_rb52j4yibzb041r95dfs') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(0, 1, 'tinytable_css_rb52j4yibzb041r95dfs') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(0, 0, 'tinytable_css_ytx3q9sj5kwbxadz05lo') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(1, 0, 'tinytable_css_ytx3q9sj5kwbxadz05lo') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(2, 0, 'tinytable_css_ytx3q9sj5kwbxadz05lo') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(3, 0, 'tinytable_css_ytx3q9sj5kwbxadz05lo') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(4, 0, 'tinytable_css_ytx3q9sj5kwbxadz05lo') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(5, 0, 'tinytable_css_ytx3q9sj5kwbxadz05lo') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(6, 0, 'tinytable_css_ytx3q9sj5kwbxadz05lo') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(7, 0, 'tinytable_css_ytx3q9sj5kwbxadz05lo') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(8, 0, 'tinytable_css_ytx3q9sj5kwbxadz05lo') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(9, 0, 'tinytable_css_ytx3q9sj5kwbxadz05lo') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(10, 0, 'tinytable_css_ytx3q9sj5kwbxadz05lo') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(11, 0, 'tinytable_css_ytx3q9sj5kwbxadz05lo') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(12, 0, 'tinytable_css_ytx3q9sj5kwbxadz05lo') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(13, 0, 'tinytable_css_ytx3q9sj5kwbxadz05lo') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(14, 0, 'tinytable_css_ytx3q9sj5kwbxadz05lo') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(15, 0, 'tinytable_css_ytx3q9sj5kwbxadz05lo') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(0, 1, 'tinytable_css_ofta3p38kbx6ayxq9x2g') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(1, 1, 'tinytable_css_ofta3p38kbx6ayxq9x2g') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(2, 1, 'tinytable_css_ofta3p38kbx6ayxq9x2g') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(3, 1, 'tinytable_css_ofta3p38kbx6ayxq9x2g') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(4, 1, 'tinytable_css_ofta3p38kbx6ayxq9x2g') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(5, 1, 'tinytable_css_ofta3p38kbx6ayxq9x2g') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(6, 1, 'tinytable_css_ofta3p38kbx6ayxq9x2g') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(7, 1, 'tinytable_css_ofta3p38kbx6ayxq9x2g') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(8, 1, 'tinytable_css_ofta3p38kbx6ayxq9x2g') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(9, 1, 'tinytable_css_ofta3p38kbx6ayxq9x2g') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(10, 1, 'tinytable_css_ofta3p38kbx6ayxq9x2g') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(11, 1, 'tinytable_css_ofta3p38kbx6ayxq9x2g') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(12, 1, 'tinytable_css_ofta3p38kbx6ayxq9x2g') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(13, 1, 'tinytable_css_ofta3p38kbx6ayxq9x2g') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(14, 1, 'tinytable_css_ofta3p38kbx6ayxq9x2g') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(15, 1, 'tinytable_css_ofta3p38kbx6ayxq9x2g') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(14, 0, 'tinytable_css_jjix1rmio984w3a9l1g7') })
+window.addEventListener('load', function () { styleCell_tinytable_fl7gnu76tyhe8jjm2dse(14, 1, 'tinytable_css_jjix1rmio984w3a9l1g7') })
     </script>
 </div>
 </div>
 <p>But this is also somewhat unconventional and makes our regression output look a little bit lonely. A better option could be to display a coefficient plot that shows point estimates and confidence intervals. This is often preferable with one model because it makes our results so much easier to interpret.</p>
-<p>Let’s try making a coefficient plot with <code><a href="https://modelsummary.com/reference/modelplot.html">modelplot()</a></code> from the <code>modelsummary</code> package. The syntax for <code><a href="https://modelsummary.com/reference/modelplot.html">modelplot()</a></code> is very similar to that of <code><a href="https://modelsummary.com/reference/modelsummary.html">modelsummary()</a></code> but there are a few small differences.</p>
+<p>Let’s try making a coefficient plot with <code><a href="https://modelsummary.com/man/modelplot.html">modelplot()</a></code> from the <code>modelsummary</code> package. The syntax for <code><a href="https://modelsummary.com/man/modelplot.html">modelplot()</a></code> is very similar to that of <code><a href="https://modelsummary.com/man/modelsummary.html">modelsummary()</a></code> but there are a few small differences.</p>
 <p>First, it puts maps the coefficients from the bottom up, so if you to maintain the order of the coefficients you need to reverse the mapping. We do this with the <code><a href="https://rdrr.io/r/base/rev.html">rev()</a></code> function.</p>
 <p>Second, we want to omit the intercept with <code>coef_omit = "Intercept"</code> because the emphasis in a coefficient plot is less on the exact regression equation and more on the magnitude and significance of the coefficients.</p>
 <p>Third we can customize various things. We can specify the color of the points and confidence intervals and we can load <code>ggplot2</code> for further customization. Now we can add geoms and labels just like any other ggplot object. Here we add a red vertical intercept line at zero to make it clearer which variables are significant (e.g.&nbsp;the confidence interval does not overlap with zero). And we add a title and a caption using the <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs()</a></code> function.</p>
@@ -1016,7 +1014,7 @@ window.addEventListener('load', function () { styleCell_tinytable_lzv74oe6pktdm2
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
 <span></span>
 <span></span>
-<span><span class="fu"><a href="https://modelsummary.com/reference/modelplot.html">modelplot</a></span><span class="op">(</span><span class="va">conflict_model</span>, </span>
+<span><span class="fu"><a href="https://modelsummary.com/man/modelplot.html">modelplot</a></span><span class="op">(</span><span class="va">conflict_model</span>, </span>
 <span>          coef_map <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rev.html">rev</a></span><span class="op">(</span><span class="va">coef_map</span><span class="op">)</span>, <span class="co"># rev() reverses list order</span></span>
 <span>          coef_omit <span class="op">=</span> <span class="st">"Intercept"</span>, </span>
 <span>          color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># use plus to add customizations like any ggplot object</span></span>

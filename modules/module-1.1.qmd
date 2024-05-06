@@ -1,5 +1,5 @@
 ---
-title: "Module 2.1"
+title: "Module 1.1"
 subtitle: "Bar Charts and Histograms"
 format: 
   html:

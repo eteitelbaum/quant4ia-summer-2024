@@ -1,5 +1,6 @@
 ---
-title: Confidence Intervals
+title: "Hypothesis Testing 1"
+subtitle: "Single Proportion"
 date: today
 date-format: long
 footer: "[IAFF 6501 Website](https://quant4ia.rocks/)"
@@ -18,396 +19,354 @@ execute:
   freeze: auto
 ---
 
-## {.smaller}
+## Jobs Training Programs
 
-On December 19, 2014, the front page of Spanish national newspaper El
-País read *"Catalan public opinion swings toward 'no' for independence, says survey"*.^[Alberto Cairo. [The truthful art: Data, charts, and maps for communication](http://www.thefunctionalart.com/p/the-truthful-art-book.html). New Riders, 2016.]
+-   International development organizations are sometimes interested in providing training to people in order to help them find a job
+-   Imagine the unemployment rate in a low-income country is 30%
+-   One organization claims that its jobs training program is a success because only 15 of the 60 people that they trained did not have a job (25% unemployment rate)
+-   What should we think about this claim? Is this a successful program?
+
+## Today's Code
+
+<https://www.dropbox.com/scl/fo/g4tdpdwcij78nyydvr4bp/h?rlkey=hctskhle6222csnwre5ir9gz3&dl=0>
+
+## 
+
+<br>
+
+Now let's create some data to match our hypothetical example.
+
+<br>
 
 ```{r}
+#| echo: true
+
 library(tidyverse)
-library(lubridate)
-library(scales)
-catalan <- tibble(
-  response = c("No", "Yes", "No answer"),
-  rate     = c(45.3, 44.5, 10.2)
-) %>%
-  mutate(response = fct_relevel(response, "No", "Yes", "No answer"))
+
+jobs_program <- tibble(
+  outcome = c(rep("unemployed", 15), rep("employed", 45))
+)
+
 ```
+
+## 
+
+<br>
+
+Use the base R `head()` function to see the first five rows.
 
 ```{r}
-#| label: catalan-misleading
-ggplot(catalan, aes(y = fct_rev(response), x = rate, fill = response)) +
-  geom_col(width = .75) +
-  scale_fill_manual(values = c("#5C8AA9", "#9D303A", "gray")) +
-  scale_x_continuous(labels = label_percent(scale = 1)) +
-  theme_minimal(base_size = 16) +
-  labs(
-    title = "Do you want Catalonia\nto become an independent state?",
-    caption = "Margin of error: +/-2.95% at 95% confidence level",
-    x = NULL, y = NULL) +
-  theme(legend.position = "none")
+#| echo: true
+
+head(jobs_program)
 ```
 
-## {.smaller}
+## 
 
-The probability of the tiny difference between the 'No' and 'Yes' being just due to random chance is very high.^[Alberto Cairo. ["Uncertainty and Graphicacy"](https://ec.europa.eu/eurostat/cros/powerfromstatistics/OR/PfS-OutlookReport-Cairo.pdf), 2017.]
+<br>
+
+Use the `tail()` function to see the last five rows.
 
 ```{r}
-catalan <- catalan %>%
-  mutate(
-    low = rate - 2.95,
-    high = rate + 2.95
-  )
-ggplot(catalan, aes(y = fct_rev(response), x = rate, color = response, group = response)) +
-  geom_segment(aes(x = low, xend = high, 
-                   y = fct_rev(response), yend = fct_rev(response)),
-               linewidth = 0.8, color = "black") +
-  geom_point(size = 3) +
-  scale_color_manual(values = c("#5C8AA9", "#9D303A", "gray")) +
-  scale_x_continuous(labels = label_percent(scale = 1)) +
-  guides(color = "none") +
-  theme_minimal(base_size = 16) +
-  labs(
-    title = "Do you want Catalonia to become an independent state?",
-    x = NULL, y = NULL
-  )
+#| echo: true
+
+tail(jobs_program)
 ```
 
-## Characterizing Uncertainty
+## 
 
 <br>
 
-- We know from previous section that even unbiased procedures do not get the "right" answer every time
-- We also know that our estimates might vary from sample to sample due to random chance
-- Therefore we want to report on our estimate and our level of uncertainty
+Now let's visualize it with a bar chart.
 
+```{r}
+jobs_program %>%
+  ggplot(aes(x = outcome)) +
+  geom_bar(fill = "steelblue") + theme_bw()
+```
 
-## Characterizing Uncertainty
-
-<br>
-
-- With M&Ms, we knew the population parameter
-- In real life, we do not!
-- We want to generate an estimate *and* characterize our uncertainty with a *range* of possible estimates
-    
-## Solution: Create a Confidence Interval
+## Question
 
 <br>
 
-- A plausible range of values for the population parameter is a confidence interval.
+Is it possible to assess this hypothetical organization's claim using the data and information presented thus far?
+
+>"Our jobs program is a success because only 15 of the 60 people that we trained did not have a job. Thus our 25% unemployment rate beats the country's unemployment rate of 30%."
+
+## Correlation vs. causation
+
+<br>
+
+-   No.
+- We need to know more about how people were selected for the program in order to assess causality (e.g., were they randomly assigned?)
+-   But, we can still ask whether the unemployment rate of $\hat{p}$ = `r round(15/60, 3)` could be due to chance.
+
+## Hypothesis Testing Intuition {.smaller}
+
+<br>
+
+- We are going to assume "nothing is going on"
+    - In this case, the jobs program had no impact
 
 . . .
 
-- 95 percent confidence interval is standard
-    - We are 95% confident that the parameter value falls within the range given by the confidence interval
+- We are going to figure out what the distribution of outcomes we we might observe could be if nothing is going on
+    - In this case: if we take a sample of 60 from a population where the parameter is 0.3
 
-## Ways to Estimate
+. . .
 
-<br>
+- We will assess how likely we would be to observe our data if nothing is going on
+    - If very unlikely, we conclude that something is probably going on
 
-- Take advantage of Central Limit Theorem to estimate using math
-- Use simulation, bootstrapping 
-
-## With Math...
-
-$$CI = \bar{x} \pm Z \left( \frac{\sigma}{\sqrt{n}} \right)$$
-
-- $\bar{x}$ is the sample mean,
-- $Z$ is the Z-score corresponding to the desired level of confidence
-- $\sigma$ is the population standard deviation, and 
-- $n$ is the sample size
-
-## 
+## Stating our Hypotheses
 
 <br>
 
-This part here represents the standard error: 
+**Null hypothesis ($H_0$):** "There is nothing going on."
 
-$$\left( \frac{\sigma}{\sqrt{n}} \right)$$
+> Unemployment rate among those in the jobs program is no different than the country average of 30%.
 
-- Standard deviation of the sampling distribution
-- Characterizes the spread of the sampling distribution
-- The bigger this is the bigger the CIs are going to be
+. . .
 
-## Central Limit Theorem
+**Alternative hypothesis ($H_A$):** "There is something going on."
 
-$$CI = \bar{x} \pm Z \left( \frac{\sigma}{\sqrt{n}} \right)$$
+> Unemployment rate is **lower** than the country average of 30%.
 
-- This way of doing things depends on the Central Limit Theorem
-- As sample size gets bigger, the spread of the sampling distribution gets narrower
-- The shape of the sampling distributions becomes more normally distributed
 
-## 
-
-<br>
-
-$$CI = \bar{x} \pm Z \left( \frac{\sigma}{\sqrt{n}} \right)$$
-
-This is therefore a **parametric** method of calculating the CI. It depends on assumptions about the normality of the distribution.  
-
-## Bootstrapping
+## Hypothesis Test
 
 <br>
 
 ::: incremental
-- Pulling oneself up from their bootstraps ... 
-- Use the data we have to estimate the sampling distribution
-- We call this the *bootstrap* distribution
-- This is a **nonparametric** method
-- It does not depend on assumptions about normality
+- **Hypothesis test:** If the null hypothesis were true, is the data we have in our sample likely to have been generated by chance (due to random variability)?
+- If yes, we do NOT reject the null hypothesis
+- If not very likely, we reject the null hypothesis 
 :::
 
-## Bootstrap Process {.smaller}
+## Hypothesis Testing Framework 
+
+::: incremental
+-   Start with null hypothesis, $H_0$, represents the status quo
+-   Set an alternative hypothesis, $H_A$, that represents the research question, i.e. what we're testing for
+-   Conduct a hypothesis test under the assumption that the null hypothesis is true 
+    -   if the test results suggest that the data do not provide convincing evidence for the alternative hypothesis, stick with the null hypothesis
+    -   if they do, then reject the null hypothesis in favor of the alternative
+:::
+
+## p-values and Critical Values
 
 <br>
 
-1. Take a bootstrap sample - a random sample taken **with replacement** from the original sample, of the **same size** as the original sample
+::: incremental
+- A **p-value** is the probability of observed or more extreme outcome given that the null hypothesis is true
+- A critical value ($\alpha$) is the threshold at which we will reject the null hypothesis
+- If the p-value is less than $\alpha$, we reject the null hypothesis
+- A standard threshold for $\alpha$ is 0.05
+:::
+
+## The Null Distribution
+
+<br>
+
+-   Since $H_0: p = 0.30$, we need to simulate a null distribution where the probability of success (unemployment) for each trial (person in program) is 0.30
 
 . . .
 
-2. Calculate the bootstrap statistic - a statistic such as mean, median, proportion, slope, etc. computed on the bootstrap samples
-
-. . .
-
-3. Repeat steps (1) and (2) many times to create a bootstrap distribution - a distribution of bootstrap statistics
-
-. . .
-
-4. Calculate the bounds of the XX% confidence interval as the middle XX% 
-of the bootstrap distribution (usually 95 percent confidence interval)
+-   We want to know how likely we would be to get an unemployment rate of 0.25 in our sample of 60, *if the true unemployment rate were 0.30*
 
 
-## Russia
+## What do we expect?
 
 <br>
 
-What Proportion of Russians believe their country interfered in the 2016 presidential elections in the US?
+::: incremental
+- So the first step is to simulate our null distribution
+- And the question is, when sampling from the null distribution, what is the expected proportion of unemployed?
+- We set up our simulator to select samples of 60 individuals with a 30% chance of being unemployed
+- We then calculate the proportion of unemployed in each sample
+:::
 
-- Pew Research survey
-- 506 subjects
-- Data available in the `openintro` package
+## Simulation #1
 
-## 
+```{r} 
+#| out-width: 50%
+
+# set seed
+set.seed(12112021)
+# create sample space
+outcomes <- c("unemployed", "employed")
+# draw the first sample of size 60 from the null distribution
+sim1 <- sample(outcomes, size = 60, prob = c(0.3, 0.7), replace = TRUE)
+# view the sample
+table(sim1)
+# calculate the simulated sample proportion 
+(p_hat_sim1 <- sum(sim1 == "unemployed") / length(sim1))
+
+# create an empty data frame
+sim_dist <- data.frame(p_hat_sim = rep(NA, 3))
+
+# record the simulated p-hat as the first observation
+sim_dist$p_hat_sim[1] <- p_hat_sim1
+
+# plot
+ggplot(sim_dist, aes(x = p_hat_sim)) + 
+  geom_dotplot() + 
+  xlim(0, 0.5) + ylim(0, 10)
+```
+
+------------------------------------------------------------------------
+
+## Simulation #2
+
+```{r}
+#| out-width: 50%
+
+sim2 <- sample(outcomes, size = 60, prob = c(0.3, 0.7), replace = TRUE)
+
+table(sim2)
+
+(p_hat_sim2 <- sum(sim2 == "unemployed") / length(sim2))
+
+sim_dist$p_hat_sim[2] <- p_hat_sim2
+
+ggplot(sim_dist, aes(x = p_hat_sim)) + 
+  geom_dotplot() + 
+  xlim(0,0.5) + ylim(0,10)
+```
+
+## Simulation #3
+
+```{r}
+#| out-width: 50%
+
+sim3 <- sample(outcomes, size = 60, prob = c(0.3, 0.7), replace = TRUE)
+
+table(sim3)
+
+(p_hat_sim3 <- sum(sim3 == "unemployed") / length(sim3))
+
+sim_dist$p_hat_sim[3] <- p_hat_sim3
+
+ggplot(sim_dist, aes(x = p_hat_sim)) + 
+  geom_dotplot() + 
+  xlim(0,0.5) + ylim(0,10)
+```
+
+## We need to do this many times...
+
+## `tidymodels`
 
 <br>
 
-For this example, we will use data from the Open Intro package. Install that package before running this code chunk.
-
-<br>
+We can use the `tidymodels` package to help with this process...
 
 ```{r}
 #| echo: true
 
-#install.packages("openintro")
-library(openintro)
-
-glimpse(russian_influence_on_us_election_2016)
-```
-
-
-## 
-
-<br>
-
-Let's use `mutate()` to recode the qualitative variable as a numeric one...
-
-<br>
-
-```{r}
-#| echo: true
-
-russiaData <- russian_influence_on_us_election_2016 |> 
-  mutate(try_influence = ifelse(influence_2016 == "Did try", 1, 0))
-```
-
-##
-
-<br>
-
-Now let's calculate the mean and standard deviation of the `try_influence` variable... 
-
-<br>
-
-```{r}
-#| echo: true
-
-russiaData |>
-  summarize( 
-          mean = mean(try_influence),
-          sd = sd(try_influence)
-  )
-```
-
-## 
-
-<br>
-
-And finally let's draw a bar plot...
-
-<br>
-
-```{r}
-#| echo: true
-#| eval: false
-
-ggplot(russiaData, aes(x = try_influence)) +
-  geom_bar(fill = "steelblue", width = .75) +
-  labs(
-    title = "Did Russia try to influence the U.S. election?",
-    x = "0 = 'No', 1 = 'Yes'",
-    y = "Frequncy"
-  ) +
-  theme_minimal()
-```
-
-## 
-
-<br>
-
-```{r}
-ggplot(russiaData, aes(x = try_influence)) +
-  geom_bar(fill = "steelblue", width = .75) +
-  labs(
-    title = "Did Russia try to influence the U.S. election?",
-    x = "0 = 'No', 1 = 'Yes'",
-    y = "Frequncy"
-  ) +
-  theme_minimal()
-```
-
-## Bootstrap with `tidymodels`
-
-Install `tidymodels` before running this code chunk... 
-
-```{r}
-#| echo: true
-
-#install.packages("tidymodels")
+#load tidymodels
 library(tidymodels)
 
-set.seed(66)
-boot_df <- russiaData |>
-  # specify the variable of interest
-  specify(response = try_influence) |>
-  # generate 15000 bootstrap samples
-  generate(reps = 15000, type = "bootstrap") |>
-  # calculate the mean of each bootstrap sample
-  calculate(stat = "mean")
-
-glimpse(boot_df)
+# simulate the distribution
+null_dist <- jobs_program |>
+  specify(response = outcome, success = "unemployed") |>
+  hypothesize(null = "point", p = c("unemployed" = 0.30, "employed" = 0.70)) |>
+  generate(reps = 2000, type = "draw") |> 
+  calculate(stat = "prop")
 ```
 
-## 
+## What is being stored in *null_dist*?
 
 <br>
 
-Calculate the confidence interval. A 95% confidence interval is bounded by the middle 95% of the bootstrap distribution.
+```{r}
+null_dist |>
+  mutate(
+    replicate = as.numeric(replicate),
+    stat = round(stat, 3)
+    )
+```
+
+## The null distribution
 
 <br>
+
+Where should this distribution be centered?  Or, what should the mean be?
+
+<br>
+
+. . .
 
 ```{r}
 #| echo: true 
 
-boot_df |>
-  summarize(lower = quantile(stat, 0.025),
-            upper = quantile(stat, 0.975))
+null_dist |>
+  summarize(mean = mean(stat))
 ```
 
-## 
+## Visualizing the null distribution
 
-<br>
+```{r out.width="40%"}
+ggplot(data = null_dist, mapping = aes(x = stat)) +
+  geom_histogram(binwidth = 0.05, fill = "steelblue4") +
+  labs(title = "Null distribution")  + theme_bw()
+```
 
-Create upper and lower bounds for visualization.
+## Calculate the p-value
 
-<br>
+<br> 
+*p-value*--in what % of the simulations was the simulated sample proportion at least as extreme as the observed sample proportion?
 
 ```{r}
 #| echo: true
 
-# for using these values later
-lower_bound <- boot_df |> summarize(lower_bound = quantile(stat, 0.025)) |> pull() 
-upper_bound <- boot_df |> summarize(upper_bound = quantile(stat, 0.975)) |> pull() 
+null_dist |>
+  # select out the value in the null distribution that are less that 0.25
+  filter(stat <= (15/60)) |>
+  # calculate the proportion - (number less divided by all values in null_dist)
+  summarise(p_value = n()/nrow(null_dist))
 ```
 
-##
+## Visualizing the p-value
 
-<br>
-
-Visualize with a histogram
-
-<br>
-
-```{r}
-#| echo: true
-#| eval: false
-
-ggplot(data = boot_df, mapping = aes(x = stat)) +
-  geom_histogram(binwidth =.01, fill = "steelblue4") +
-  geom_vline(xintercept = c(lower_bound, upper_bound), color = "darkgrey", size = 1, linetype = "dashed") +
-  labs(title = "Bootstrap distribution of means",
-       subtitle = "and 95% confidence interval",
-       x = "Estimate",
-       y = "Frequency") +
-  theme_bw()
+```{r echo=FALSE, out.width="50%"}
+ggplot(data = null_dist, mapping = aes(x = stat)) +
+  geom_histogram(binwidth = 0.05, fill = "steelblue4") +
+  labs(title = "Null distribution") +     
+  geom_vline(xintercept = .25, linetype="dotted", 
+                color = "black", size=1) + theme_bw()
 ```
 
-## 
+## "Significance" level {.smaller}
 
 <br>
 
-```{r}
-ggplot(data = boot_df, mapping = aes(x = stat)) +
-  geom_histogram(binwidth =.01, fill = "steelblue4") +
-  geom_vline(xintercept = c(lower_bound, upper_bound), color = "darkgrey", size = 1, linetype = "dashed") +
-  labs(title = "Bootstrap distribution of means",
-       subtitle = "and 95% confidence interval",
-       x = "Estimate",
-       y = "Frequency") +
-  theme_bw()
-```
+::: incremental
+- Conventionally, people use a p-value of *0.05* as a cutoff ("signifigance level") for determining "statistical significance"
+    - That is, whether the null hypothesis should be rejected
+    - That is, whether the data we gathered is very unlikely to have been generated due to chance
+- Always remember that this is a convention
+    - *p=0.049* is under the cutoff, while p=0.051 is not: are these really different?
+- When people report "statistically significant" results, they mean that the p-value from their analysis is less than 0.05
+:::
 
-## Interpret the confidence interval {.smaller}
+## Our Hypothetical Study
 
 <br>
 
-The 95% confidence interval was calculated as (`lower_bound`, `upper_bound`). Which of the following is the correct interpretation of this interval?
+- Our finding: if the true unemployment rate were 30 percent and we draw samples of 60, about 23 percent of the time we will get an unemployment rate lower than the one among the participants in the program (simply due to random chance)
+- What should we conclude?
+
+## Conclusion
 
 <br>
 
-**(a)** 95% of the time the percentage of Russian who believe that Russia interfered in the 2016 US elections is between `lower_bound` and `upper_bound`.
+- We do NOT reject the null hypothesis: the unemployment rate in the sample could likely have been due to chance
 
-**(b)** 95% of all Russians believe that the chance Russia interfered in the 2016 US elections is between `lower_bound` and `upper_bound`.
+## Your Turn!
 
-**(c)** We are 95% confident that the proportion of Russians who believe that Russia interfered in the 2016 US election is between `lower_bound` and `upper_bound`.
-
-**(d)** We are 95% confident that the proportion of Russians who supported interfering in the 2016 US elections is between `lower_bound` and `upper_bound`.
-
-## Your Turn! {.smaller}
-
-<br>
-
-- Change the `reps` argument in the `generate()` function to 1000. What happens to the width of the confidence interval?
-- Change the `reps` argument in the `generate()` function to 5000. What happens to the width of the confidence interval?
-- Change the `reps` argument in the `generate()` function to 10000. What happens to the width of the confidence interval?
-- How does the width of the confidence interval change as the number of bootstrap samples increases?
-- How would you interpret this finding? 
-
-## Bias vs Precision
-
-- A procedure is *unbiased* if it generates the "right" answer, on average
-- Precision refers to variability: procedures with less sampling variability will be more precise
-    - all else equal, a greater sample size will increase precision
-- When we increase the sample size (number of reps), we increase precision
-- As a result our confidence interval will be narrower
-
-## Why did we do these simulations?
-
-<br>
-
-- They provide a foundation for statistical inference and for characterizing *uncertainty* in our estimates
-- The best **research designs** will try to maximize or achieve good balance on bias vs precision
-
-
-
-
+- What if the unemployment rate for the program was only 10%?     - Would you reject the null hypothesis in this case?
+    - Demonstrate by calculating the p-value
+- Try changing the true unemployment rate in the null distribution to 0.50 (50%)
+  - Simulate the null distribution
+  - Would you reject the null hypothesis if the observed unemployment rate was 23% in this case?
 

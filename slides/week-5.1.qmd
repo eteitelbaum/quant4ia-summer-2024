@@ -29,7 +29,6 @@ library(vdemdata)
 set.seed(1234)
 ```
 
-
 ## Modeling 
 
 ::: {.incremental}
@@ -56,7 +55,6 @@ ggplot(df1, aes(x = x, y = y)) +
 ```
 
 ## Modeling
-
 
 ```{r}
 #| label: nonlinear-model

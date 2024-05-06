@@ -1,5 +1,5 @@
 ---
-title: "Module 3.1"
+title: "Module 2.1"
 subtitle: "Working with APIs"
 format: 
   html:

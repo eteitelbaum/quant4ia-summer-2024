@@ -11,8 +11,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.533">
 
-  <meta name="dcterms.date" content="2024-04-18">
-  <title>IAFF 6501–Spring 2024 Schedule - Sampling</title>
+  <meta name="dcterms.date" content="2024-05-05">
+  <title>IAFF 6501–Spring 2024 Schedule - Sampling and Uncertainty</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -388,9 +388,9 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="IAFF 6501–Spring 2024 Schedule - Sampling">
+<meta property="og:title" content="IAFF 6501–Spring 2024 Schedule - Sampling and Uncertainty">
 <meta property="og:site_name" content="IAFF 6501--Spring 2024 Schedule">
-<meta name="twitter:title" content="IAFF 6501–Spring 2024 Schedule - Sampling">
+<meta name="twitter:title" content="IAFF 6501–Spring 2024 Schedule - Sampling and Uncertainty">
 <meta name="twitter:card" content="summary">
 </head>
 <body class="quarto-dark">
@@ -398,12 +398,12 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Sampling</h1>
+  <h1 class="title">Sampling and Uncertainty</h1>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">April 18, 2024</p>
+  <p class="date">May 5, 2024</p>
 </section>
 <section id="sampling" class="slide level2">
 <h2>Sampling</h2>
@@ -579,6 +579,341 @@
 <li class="fragment"><strong>Causal inference</strong>–Did X cause Y? [topic for later classes]</li>
 </ul>
 </div>
+</section></section>
+<section>
+<section id="uncertainty" class="title-slide slide level1 center">
+<h1>Uncertainty</h1>
+
+</section>
+<section id="section" class="slide level2 smaller">
+<h2></h2>
+<p>On December 19, 2014, the front page of Spanish national newspaper El País read <em>“Catalan public opinion swings toward ‘no’ for independence, says survey”</em>.<sup>1</sup></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="week-3.2_files/figure-html/catalan-misleading-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Alberto Cairo. <a href="http://www.thefunctionalart.com/p/the-truthful-art-book.html">The truthful art: Data, charts, and maps for communication</a>. New Riders, 2016.</p></li></ol></aside></section>
+<section id="section-1" class="slide level2 smaller">
+<h2></h2>
+<p>The probability of the tiny difference between the ‘No’ and ‘Yes’ being just due to random chance is very high.<sup>1</sup></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="week-3.2_files/figure-html/unnamed-chunk-6-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Alberto Cairo. <a href="https://ec.europa.eu/eurostat/cros/powerfromstatistics/OR/PfS-OutlookReport-Cairo.pdf">“Uncertainty and Graphicacy”</a>, 2017.</p></li></ol></aside></section>
+<section id="characterizing-uncertainty" class="slide level2">
+<h2>Characterizing Uncertainty</h2>
+<p><br></p>
+<ul>
+<li>We know from previous section that even unbiased procedures do not get the “right” answer every time</li>
+<li>We also know that our estimates might vary from sample to sample due to random chance</li>
+<li>Therefore we want to report on our estimate and our level of uncertainty</li>
+</ul>
+</section>
+<section id="characterizing-uncertainty-1" class="slide level2">
+<h2>Characterizing Uncertainty</h2>
+<p><br></p>
+<ul>
+<li>With M&amp;Ms, we knew the population parameter</li>
+<li>In real life, we do not!</li>
+<li>We want to generate an estimate <em>and</em> characterize our uncertainty with a <em>range</em> of possible estimates</li>
+</ul>
+</section>
+<section id="solution-create-a-confidence-interval" class="slide level2">
+<h2>Solution: Create a Confidence Interval</h2>
+<p><br></p>
+<ul>
+<li>A plausible range of values for the population parameter is a confidence interval.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>95 percent confidence interval is standard
+<ul>
+<li>We are 95% confident that the parameter value falls within the range given by the confidence interval</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="ways-to-estimate" class="slide level2">
+<h2>Ways to Estimate</h2>
+<p><br></p>
+<ul>
+<li>Take advantage of Central Limit Theorem to estimate using math</li>
+<li>Use simulation, bootstrapping</li>
+</ul>
+</section>
+<section id="with-math" class="slide level2">
+<h2>With Math…</h2>
+<p><span class="math display">\[CI = \bar{x} \pm Z \left( \frac{\sigma}{\sqrt{n}} \right)\]</span></p>
+<ul>
+<li><span class="math inline">\(\bar{x}\)</span> is the sample mean,</li>
+<li><span class="math inline">\(Z\)</span> is the Z-score corresponding to the desired level of confidence</li>
+<li><span class="math inline">\(\sigma\)</span> is the population standard deviation, and</li>
+<li><span class="math inline">\(n\)</span> is the sample size</li>
+</ul>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p><br></p>
+<p>This part here represents the standard error:</p>
+<p><span class="math display">\[\left( \frac{\sigma}{\sqrt{n}} \right)\]</span></p>
+<ul>
+<li>Standard deviation of the sampling distribution</li>
+<li>Characterizes the spread of the sampling distribution</li>
+<li>The bigger this is the bigger the CIs are going to be</li>
+</ul>
+</section>
+<section id="central-limit-theorem" class="slide level2">
+<h2>Central Limit Theorem</h2>
+<p><span class="math display">\[CI = \bar{x} \pm Z \left( \frac{\sigma}{\sqrt{n}} \right)\]</span></p>
+<ul>
+<li>This way of doing things depends on the Central Limit Theorem</li>
+<li>As sample size gets bigger, the spread of the sampling distribution gets narrower</li>
+<li>The shape of the sampling distributions becomes more normally distributed</li>
+</ul>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<p><br></p>
+<p><span class="math display">\[CI = \bar{x} \pm Z \left( \frac{\sigma}{\sqrt{n}} \right)\]</span></p>
+<p>This is therefore a <strong>parametric</strong> method of calculating the CI. It depends on assumptions about the normality of the distribution.</p>
+</section>
+<section id="bootstrapping" class="slide level2">
+<h2>Bootstrapping</h2>
+<p><br></p>
+<div>
+<ul>
+<li class="fragment">Pulling oneself up from their bootstraps …</li>
+<li class="fragment">Use the data we have to estimate the sampling distribution</li>
+<li class="fragment">We call this the <em>bootstrap</em> distribution</li>
+<li class="fragment">This is a <strong>nonparametric</strong> method</li>
+<li class="fragment">It does not depend on assumptions about normality</li>
+</ul>
+</div>
+</section>
+<section id="bootstrap-process" class="slide level2 smaller">
+<h2>Bootstrap Process</h2>
+<p><br></p>
+<ol type="1">
+<li>Take a bootstrap sample - a random sample taken <strong>with replacement</strong> from the original sample, of the <strong>same size</strong> as the original sample</li>
+</ol>
+<div class="fragment">
+<ol start="2" type="1">
+<li>Calculate the bootstrap statistic - a statistic such as mean, median, proportion, slope, etc. computed on the bootstrap samples</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li>Repeat steps (1) and (2) many times to create a bootstrap distribution - a distribution of bootstrap statistics</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="4" type="1">
+<li>Calculate the bounds of the XX% confidence interval as the middle XX% of the bootstrap distribution (usually 95 percent confidence interval)</li>
+</ol>
+</div>
+</section>
+<section id="russia" class="slide level2">
+<h2>Russia</h2>
+<p><br></p>
+<p>What Proportion of Russians believe their country interfered in the 2016 presidential elections in the US?</p>
+<ul>
+<li>Pew Research survey</li>
+<li>506 subjects</li>
+<li>Data available in the <code>openintro</code> package</li>
+</ul>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<p><br></p>
+<p>For this example, we will use data from the Open Intro package. Install that package before running this code chunk.</p>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co">#install.packages("openintro")</span></span>
+<span id="cb4-2"><a></a><span class="fu">library</span>(openintro)</span>
+<span id="cb4-3"><a></a></span>
+<span id="cb4-4"><a></a><span class="fu">glimpse</span>(russian_influence_on_us_election_2016)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 506
+Columns: 1
+$ influence_2016 &lt;chr&gt; "Did not try", "Did not try", "Did not try", "Don't kno…</code></pre>
+</div>
+</div>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<p><br></p>
+<p>Let’s use <code>mutate()</code> to recode the qualitative variable as a numeric one…</p>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>russiaData <span class="ot">&lt;-</span> russian_influence_on_us_election_2016 <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a></a>  <span class="fu">mutate</span>(<span class="at">try_influence =</span> <span class="fu">ifelse</span>(influence_2016 <span class="sc">==</span> <span class="st">"Did try"</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<p><br></p>
+<p>Now let’s calculate the mean and standard deviation of the <code>try_influence</code> variable…</p>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>russiaData <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a></a>  <span class="fu">summarize</span>( </span>
+<span id="cb7-3"><a></a>          <span class="at">mean =</span> <span class="fu">mean</span>(try_influence),</span>
+<span id="cb7-4"><a></a>          <span class="at">sd =</span> <span class="fu">sd</span>(try_influence)</span>
+<span id="cb7-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+   mean    sd
+  &lt;dbl&gt; &lt;dbl&gt;
+1 0.150 0.358</code></pre>
+</div>
+</div>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p><br></p>
+<p>And finally let’s draw a bar plot…</p>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(russiaData, <span class="fu">aes</span>(<span class="at">x =</span> try_influence)) <span class="sc">+</span></span>
+<span id="cb9-2"><a></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">width =</span> .<span class="dv">75</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-4"><a></a>    <span class="at">title =</span> <span class="st">"Did Russia try to influence the U.S. election?"</span>,</span>
+<span id="cb9-5"><a></a>    <span class="at">x =</span> <span class="st">"0 = 'No', 1 = 'Yes'"</span>,</span>
+<span id="cb9-6"><a></a>    <span class="at">y =</span> <span class="st">"Frequncy"</span></span>
+<span id="cb9-7"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb9-8"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<p><br></p>
+
+<img data-src="week-3.2_files/figure-html/unnamed-chunk-11-1.png" width="672" class="r-stretch"></section>
+<section id="bootstrap-with-tidymodels" class="slide level2">
+<h2>Bootstrap with <code>tidymodels</code></h2>
+<p>Install <code>tidymodels</code> before running this code chunk…</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co">#install.packages("tidymodels")</span></span>
+<span id="cb10-2"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb10-3"><a></a></span>
+<span id="cb10-4"><a></a><span class="fu">set.seed</span>(<span class="dv">66</span>)</span>
+<span id="cb10-5"><a></a>boot_df <span class="ot">&lt;-</span> russiaData <span class="sc">|&gt;</span></span>
+<span id="cb10-6"><a></a>  <span class="co"># specify the variable of interest</span></span>
+<span id="cb10-7"><a></a>  <span class="fu">specify</span>(<span class="at">response =</span> try_influence) <span class="sc">|&gt;</span></span>
+<span id="cb10-8"><a></a>  <span class="co"># generate 15000 bootstrap samples</span></span>
+<span id="cb10-9"><a></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">15000</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-10"><a></a>  <span class="co"># calculate the mean of each bootstrap sample</span></span>
+<span id="cb10-11"><a></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"mean"</span>)</span>
+<span id="cb10-12"><a></a></span>
+<span id="cb10-13"><a></a><span class="fu">glimpse</span>(boot_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 15,000
+Columns: 2
+$ replicate &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 1…
+$ stat      &lt;dbl&gt; 0.1146245, 0.1442688, 0.1343874, 0.1877470, 0.1521739, 0.138…</code></pre>
+</div>
+</div>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<p><br></p>
+<p>Calculate the confidence interval. A 95% confidence interval is bounded by the middle 95% of the bootstrap distribution.</p>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>boot_df <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a></a>  <span class="fu">summarize</span>(<span class="at">lower =</span> <span class="fu">quantile</span>(stat, <span class="fl">0.025</span>),</span>
+<span id="cb12-3"><a></a>            <span class="at">upper =</span> <span class="fu">quantile</span>(stat, <span class="fl">0.975</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  lower upper
+  &lt;dbl&gt; &lt;dbl&gt;
+1 0.119 0.182</code></pre>
+</div>
+</div>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<p><br></p>
+<p>Create upper and lower bounds for visualization.</p>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># for using these values later</span></span>
+<span id="cb14-2"><a></a>lower_bound <span class="ot">&lt;-</span> boot_df <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">lower_bound =</span> <span class="fu">quantile</span>(stat, <span class="fl">0.025</span>)) <span class="sc">|&gt;</span> <span class="fu">pull</span>() </span>
+<span id="cb14-3"><a></a>upper_bound <span class="ot">&lt;-</span> boot_df <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">upper_bound =</span> <span class="fu">quantile</span>(stat, <span class="fl">0.975</span>)) <span class="sc">|&gt;</span> <span class="fu">pull</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<p><br></p>
+<p>Visualize with a histogram</p>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> boot_df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> stat)) <span class="sc">+</span></span>
+<span id="cb15-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span>.<span class="dv">01</span>, <span class="at">fill =</span> <span class="st">"steelblue4"</span>) <span class="sc">+</span></span>
+<span id="cb15-3"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(lower_bound, upper_bound), <span class="at">color =</span> <span class="st">"darkgrey"</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb15-4"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Bootstrap distribution of means"</span>,</span>
+<span id="cb15-5"><a></a>       <span class="at">subtitle =</span> <span class="st">"and 95% confidence interval"</span>,</span>
+<span id="cb15-6"><a></a>       <span class="at">x =</span> <span class="st">"Estimate"</span>,</span>
+<span id="cb15-7"><a></a>       <span class="at">y =</span> <span class="st">"Frequency"</span>) <span class="sc">+</span></span>
+<span id="cb15-8"><a></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<p><br></p>
+
+<img data-src="week-3.2_files/figure-html/unnamed-chunk-16-1.png" width="672" class="r-stretch"></section>
+<section id="interpret-the-confidence-interval" class="slide level2 smaller">
+<h2>Interpret the confidence interval</h2>
+<p><br></p>
+<p>The 95% confidence interval was calculated as (<code>lower_bound</code>, <code>upper_bound</code>). Which of the following is the correct interpretation of this interval?</p>
+<p><br></p>
+<p><strong>(a)</strong> 95% of the time the percentage of Russian who believe that Russia interfered in the 2016 US elections is between <code>lower_bound</code> and <code>upper_bound</code>.</p>
+<p><strong>(b)</strong> 95% of all Russians believe that the chance Russia interfered in the 2016 US elections is between <code>lower_bound</code> and <code>upper_bound</code>.</p>
+<p><strong>(c)</strong> We are 95% confident that the proportion of Russians who believe that Russia interfered in the 2016 US election is between <code>lower_bound</code> and <code>upper_bound</code>.</p>
+<p><strong>(d)</strong> We are 95% confident that the proportion of Russians who supported interfering in the 2016 US elections is between <code>lower_bound</code> and <code>upper_bound</code>.</p>
+</section>
+<section id="your-turn" class="slide level2 smaller">
+<h2>Your Turn!</h2>
+<p><br></p>
+<ul>
+<li>Change the <code>reps</code> argument in the <code>generate()</code> function to 1000. What happens to the width of the confidence interval?</li>
+<li>Change the <code>reps</code> argument in the <code>generate()</code> function to 5000. What happens to the width of the confidence interval?</li>
+<li>Change the <code>reps</code> argument in the <code>generate()</code> function to 10000. What happens to the width of the confidence interval?</li>
+<li>How does the width of the confidence interval change as the number of bootstrap samples increases?</li>
+<li>How would you interpret this finding?</li>
+</ul>
+</section>
+<section id="bias-vs-precision" class="slide level2">
+<h2>Bias vs Precision</h2>
+<ul>
+<li>A procedure is <em>unbiased</em> if it generates the “right” answer, on average</li>
+<li>Precision refers to variability: procedures with less sampling variability will be more precise
+<ul>
+<li>all else equal, a greater sample size will increase precision</li>
+</ul></li>
+<li>When we increase the sample size (number of reps), we increase precision</li>
+<li>As a result our confidence interval will be narrower</li>
+</ul>
+</section>
+<section id="why-did-we-do-these-simulations" class="slide level2">
+<h2>Why did we do these simulations?</h2>
+<p><br></p>
+<ul>
+<li>They provide a foundation for statistical inference and for characterizing <em>uncertainty</em> in our estimates</li>
+<li>The best <strong>research designs</strong> will try to maximize or achieve good balance on bias vs precision</li>
+</ul>
 
 
 </section><div class="quarto-auto-generated-content">
@@ -587,6 +922,7 @@
 <p><a href="https://quant4ia.rocks/">IAFF 6501 Website</a></p>
 </div>
 </div></section>
+
     </div>
   </div>
 
@@ -799,44 +1135,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

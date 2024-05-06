@@ -11,8 +11,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.533">
 
-  <meta name="dcterms.date" content="2024-04-18">
-  <title>IAFF 6501–Spring 2024 Schedule - Hypothesis Testing</title>
+  <meta name="dcterms.date" content="2024-05-05">
+  <title>IAFF 6501–Spring 2024 Schedule - Hypothesis Testing 2</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -388,9 +388,11 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="IAFF 6501–Spring 2024 Schedule - Hypothesis Testing">
+<meta property="og:title" content="IAFF 6501–Spring 2024 Schedule - Hypothesis Testing 2">
+<meta property="og:description" content="Reletionship Between Two Variables">
 <meta property="og:site_name" content="IAFF 6501--Spring 2024 Schedule">
-<meta name="twitter:title" content="IAFF 6501–Spring 2024 Schedule - Hypothesis Testing">
+<meta name="twitter:title" content="IAFF 6501–Spring 2024 Schedule - Hypothesis Testing 2">
+<meta name="twitter:description" content="Reletionship Between Two Variables">
 <meta name="twitter:card" content="summary">
 </head>
 <body class="quarto-dark">
@@ -398,385 +400,13 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Hypothesis Testing</h1>
+  <h1 class="title">Hypothesis Testing 2</h1>
+  <p class="subtitle">Reletionship Between Two Variables</p>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">April 18, 2024</p>
-</section>
-<section>
-<section id="hypothesis-test-for-a-single-proportion" class="title-slide slide level1 center">
-<h1>Hypothesis Test for a Single Proportion</h1>
-
-</section>
-<section id="jobs-training-programs" class="slide level2">
-<h2>Jobs Training Programs</h2>
-<ul>
-<li>International development organizations are sometimes interested in providing training to people in order to help them find a job</li>
-<li>Imagine the unemployment rate in a low-income country is 30%</li>
-<li>One organization claims that its jobs training program is a success because only 15 of the 60 people that they trained did not have a job (25% unemployment rate)</li>
-<li>What should we think about this claim? Is this a successful program?</li>
-</ul>
-</section>
-<section id="todays-code" class="slide level2">
-<h2>Today’s Code</h2>
-<p><a href="https://www.dropbox.com/scl/fo/g4tdpdwcij78nyydvr4bp/h?rlkey=hctskhle6222csnwre5ir9gz3&amp;dl=0" class="uri">https://www.dropbox.com/scl/fo/g4tdpdwcij78nyydvr4bp/h?rlkey=hctskhle6222csnwre5ir9gz3&amp;dl=0</a></p>
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
-<p><br></p>
-<p>Now let’s create some data to match our hypothetical example.</p>
-<p><br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a>jobs_program <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb1-4"><a></a>  <span class="at">outcome =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"unemployed"</span>, <span class="dv">15</span>), <span class="fu">rep</span>(<span class="st">"employed"</span>, <span class="dv">45</span>))</span>
-<span id="cb1-5"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-<p><br></p>
-<p>Use the base R <code>head()</code> function to see the first five rows.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">head</span>(jobs_program)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 1
-  outcome   
-  &lt;chr&gt;     
-1 unemployed
-2 unemployed
-3 unemployed
-4 unemployed
-5 unemployed
-6 unemployed</code></pre>
-</div>
-</div>
-</section>
-<section id="section-2" class="slide level2">
-<h2></h2>
-<p><br></p>
-<p>Use the <code>tail()</code> function to see the last five rows.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">tail</span>(jobs_program)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 1
-  outcome 
-  &lt;chr&gt;   
-1 employed
-2 employed
-3 employed
-4 employed
-5 employed
-6 employed</code></pre>
-</div>
-</div>
-</section>
-<section id="section-3" class="slide level2">
-<h2></h2>
-<p><br></p>
-<p>Now let’s visualize it with a bar chart.</p>
-
-<img data-src="week-4.2_files/figure-html/unnamed-chunk-4-1.png" width="672" class="r-stretch"></section>
-<section id="question" class="slide level2">
-<h2>Question</h2>
-<p><br></p>
-<p>Is it possible to assess this hypothetical organization’s claim using the data and information presented thus far?</p>
-<blockquote>
-<p>“Our jobs program is a success because only 15 of the 60 people that we trained did not have a job. Thus our 25% unemployment rate beats the country’s unemployment rate of 30%.”</p>
-</blockquote>
-</section>
-<section id="correlation-vs.-causation" class="slide level2">
-<h2>Correlation vs.&nbsp;causation</h2>
-<p><br></p>
-<ul>
-<li>No.</li>
-<li>We need to know more about how people were selected for the program in order to assess causality (e.g., were they randomly assigned?)</li>
-<li>But, we can still ask whether the unemployment rate of <span class="math inline">\(\hat{p}\)</span> = 0.25 could be due to chance.</li>
-</ul>
-</section>
-<section id="hypothesis-testing-intuition" class="slide level2 smaller">
-<h2>Hypothesis Testing Intuition</h2>
-<p><br></p>
-<ul>
-<li>We are going to assume “nothing is going on”
-<ul>
-<li>In this case, the jobs program had no impact</li>
-</ul></li>
-</ul>
-<div class="fragment">
-<ul>
-<li>We are going to figure out what the distribution of outcomes we we might observe could be if nothing is going on
-<ul>
-<li>In this case: if we take a sample of 60 from a population where the parameter is 0.3</li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>We will assess how likely we would be to observe our data if nothing is going on
-<ul>
-<li>If very unlikely, we conclude that something is probably going on</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="stating-our-hypotheses" class="slide level2">
-<h2>Stating our Hypotheses</h2>
-<p><br></p>
-<p><strong>Null hypothesis (<span class="math inline">\(H_0\)</span>):</strong> “There is nothing going on.”</p>
-<blockquote>
-<p>Unemployment rate among those in the jobs program is no different than the country average of 30%.</p>
-</blockquote>
-<div class="fragment">
-<p><strong>Alternative hypothesis (<span class="math inline">\(H_A\)</span>):</strong> “There is something going on.”</p>
-<blockquote>
-<p>Unemployment rate is <strong>lower</strong> than the country average of 30%.</p>
-</blockquote>
-</div>
-</section>
-<section id="hypothesis-test" class="slide level2">
-<h2>Hypothesis Test</h2>
-<p><br></p>
-<div>
-<ul>
-<li class="fragment"><strong>Hypothesis test:</strong> If the null hypothesis were true, is the data we have in our sample likely to have been generated by chance (due to random variability)?</li>
-<li class="fragment">If yes, we do NOT reject the null hypothesis</li>
-<li class="fragment">If not very likely, we reject the null hypothesis</li>
-</ul>
-</div>
-</section>
-<section id="hypothesis-testing-framework" class="slide level2">
-<h2>Hypothesis Testing Framework</h2>
-<div>
-<ul>
-<li class="fragment">Start with null hypothesis, <span class="math inline">\(H_0\)</span>, represents the status quo</li>
-<li class="fragment">Set an alternative hypothesis, <span class="math inline">\(H_A\)</span>, that represents the research question, i.e.&nbsp;what we’re testing for</li>
-<li class="fragment">Conduct a hypothesis test under the assumption that the null hypothesis is true
-<ul>
-<li class="fragment">if the test results suggest that the data do not provide convincing evidence for the alternative hypothesis, stick with the null hypothesis</li>
-<li class="fragment">if they do, then reject the null hypothesis in favor of the alternative</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="p-values-and-critical-values" class="slide level2">
-<h2>p-values and Critical Values</h2>
-<p><br></p>
-<div>
-<ul>
-<li class="fragment">A <strong>p-value</strong> is the probability of observed or more extreme outcome given that the null hypothesis is true</li>
-<li class="fragment">A critical value (<span class="math inline">\(\alpha\)</span>) is the threshold at which we will reject the null hypothesis</li>
-<li class="fragment">If the p-value is less than <span class="math inline">\(\alpha\)</span>, we reject the null hypothesis</li>
-<li class="fragment">A standard threshold for <span class="math inline">\(\alpha\)</span> is 0.05</li>
-</ul>
-</div>
-</section>
-<section id="the-null-distribution" class="slide level2">
-<h2>The Null Distribution</h2>
-<p><br></p>
-<ul>
-<li>Since <span class="math inline">\(H_0: p = 0.30\)</span>, we need to simulate a null distribution where the probability of success (unemployment) for each trial (person in program) is 0.30</li>
-</ul>
-<div class="fragment">
-<ul>
-<li>We want to know how likely we would be to get an unemployment rate of 0.25 in our sample of 60, <em>if the true unemployment rate were 0.30</em></li>
-</ul>
-</div>
-</section>
-<section id="what-do-we-expect" class="slide level2">
-<h2>What do we expect?</h2>
-<p><br></p>
-<div>
-<ul>
-<li class="fragment">So the first step is to simulate our null distribution</li>
-<li class="fragment">And the question is, when sampling from the null distribution, what is the expected proportion of unemployed?</li>
-<li class="fragment">We set up our simulator to select samples of 60 individuals with a 30% chance of being unemployed</li>
-<li class="fragment">We then calculate the proportion of unemployed in each sample</li>
-</ul>
-</div>
-</section>
-<section id="simulation-1" class="slide level2">
-<h2>Simulation #1</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>sim1
-  employed unemployed 
-        42         18 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.3</code></pre>
-</div>
-
-</div>
-<img data-src="week-4.2_files/figure-html/unnamed-chunk-5-1.png" style="width:50.0%" class="r-stretch"></section>
-<section id="simulation-2" class="slide level2">
-<h2>Simulation #2</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>sim2
-  employed unemployed 
-        41         19 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.3166667</code></pre>
-</div>
-
-</div>
-<img data-src="week-4.2_files/figure-html/unnamed-chunk-6-1.png" style="width:50.0%" class="r-stretch"></section>
-<section id="simulation-3" class="slide level2">
-<h2>Simulation #3</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>sim3
-  employed unemployed 
-        38         22 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.3666667</code></pre>
-</div>
-
-</div>
-<img data-src="week-4.2_files/figure-html/unnamed-chunk-7-1.png" style="width:50.0%" class="r-stretch"></section>
-<section id="we-need-to-do-this-many-times" class="slide level2">
-<h2>We need to do this many times…</h2>
-</section>
-<section id="tidymodels" class="slide level2">
-<h2><code>tidymodels</code></h2>
-<p><br></p>
-<p>We can use the <code>tidymodels</code> package to help with this process…</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co">#load tidymodels</span></span>
-<span id="cb12-2"><a></a><span class="fu">library</span>(tidymodels)</span>
-<span id="cb12-3"><a></a></span>
-<span id="cb12-4"><a></a><span class="co"># simulate the distribution</span></span>
-<span id="cb12-5"><a></a>null_dist <span class="ot">&lt;-</span> jobs_program <span class="sc">|&gt;</span></span>
-<span id="cb12-6"><a></a>  <span class="fu">specify</span>(<span class="at">response =</span> outcome, <span class="at">success =</span> <span class="st">"unemployed"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-7"><a></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"point"</span>, <span class="at">p =</span> <span class="fu">c</span>(<span class="st">"unemployed"</span> <span class="ot">=</span> <span class="fl">0.30</span>, <span class="st">"employed"</span> <span class="ot">=</span> <span class="fl">0.70</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb12-8"><a></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">2000</span>, <span class="at">type =</span> <span class="st">"draw"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb12-9"><a></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"prop"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="what-is-being-stored-in-null_dist" class="slide level2">
-<h2>What is being stored in <em>null_dist</em>?</h2>
-<p><br></p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>Response: outcome (factor)
-Null Hypothesis: point
-# A tibble: 2,000 × 2
-   replicate  stat
-       &lt;dbl&gt; &lt;dbl&gt;
- 1         1 0.367
- 2         2 0.2  
- 3         3 0.283
- 4         4 0.2  
- 5         5 0.4  
- 6         6 0.317
- 7         7 0.3  
- 8         8 0.333
- 9         9 0.283
-10        10 0.25 
-# ℹ 1,990 more rows</code></pre>
-</div>
-</div>
-</section>
-<section id="the-null-distribution-1" class="slide level2">
-<h2>The null distribution</h2>
-<p><br></p>
-<p>Where should this distribution be centered? Or, what should the mean be?</p>
-<p><br></p>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>null_dist <span class="sc">|&gt;</span></span>
-<span id="cb14-2"><a></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(stat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 1
-   mean
-  &lt;dbl&gt;
-1 0.301</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="visualizing-the-null-distribution" class="slide level2">
-<h2>Visualizing the null distribution</h2>
-
-<img data-src="week-4.2_files/figure-html/unnamed-chunk-11-1.png" style="width:40.0%" class="r-stretch"></section>
-<section id="calculate-the-p-value" class="slide level2">
-<h2>Calculate the p-value</h2>
-<p><br> <em>p-value</em>–in what % of the simulations was the simulated sample proportion at least as extreme as the observed sample proportion?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>null_dist <span class="sc">|&gt;</span></span>
-<span id="cb16-2"><a></a>  <span class="co"># select out the value in the null distribution that are less that 0.25</span></span>
-<span id="cb16-3"><a></a>  <span class="fu">filter</span>(stat <span class="sc">&lt;=</span> (<span class="dv">15</span><span class="sc">/</span><span class="dv">60</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb16-4"><a></a>  <span class="co"># calculate the proportion - (number less divided by all values in null_dist)</span></span>
-<span id="cb16-5"><a></a>  <span class="fu">summarise</span>(<span class="at">p_value =</span> <span class="fu">n</span>()<span class="sc">/</span><span class="fu">nrow</span>(null_dist))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 1
-  p_value
-    &lt;dbl&gt;
-1   0.238</code></pre>
-</div>
-</div>
-</section>
-<section id="visualizing-the-p-value" class="slide level2">
-<h2>Visualizing the p-value</h2>
-
-<img data-src="week-4.2_files/figure-html/unnamed-chunk-13-1.png" style="width:50.0%" class="r-stretch"></section>
-<section id="significance-level" class="slide level2 smaller">
-<h2>“Significance” level</h2>
-<p><br></p>
-<div>
-<ul>
-<li class="fragment">Conventionally, people use a p-value of <em>0.05</em> as a cutoff (“signifigance level”) for determining “statistical significance”
-<ul>
-<li class="fragment">That is, whether the null hypothesis should be rejected</li>
-<li class="fragment">That is, whether the data we gathered is very unlikely to have been generated due to chance</li>
-</ul></li>
-<li class="fragment">Always remember that this is a convention
-<ul>
-<li class="fragment"><em>p=0.049</em> is under the cutoff, while p=0.051 is not: are these really different?</li>
-</ul></li>
-<li class="fragment">When people report “statistically significant” results, they mean that the p-value from their analysis is less than 0.05</li>
-</ul>
-</div>
-</section>
-<section id="our-hypothetical-study" class="slide level2">
-<h2>Our Hypothetical Study</h2>
-<p><br></p>
-<ul>
-<li>Our finding: if the true unemployment rate were 30 percent and we draw samples of 60, about 23 percent of the time we will get an unemployment rate lower than the one among the participants in the program (simply due to random chance)</li>
-<li>What should we conclude?</li>
-</ul>
-</section>
-<section id="conclusion" class="slide level2">
-<h2>Conclusion</h2>
-<p><br></p>
-<ul>
-<li>We do NOT reject the null hypothesis: the unemployment rate in the sample could likely have been due to chance</li>
-</ul>
-</section>
-<section id="your-turn" class="slide level2">
-<h2>Your Turn!</h2>
-<ul>
-<li>What if the unemployment rate for the program was only 10%? - Would you reject the null hypothesis in this case?
-<ul>
-<li>Demonstrate by calculating the p-value</li>
-</ul></li>
-<li>Try changing the true unemployment rate in the null distribution to 0.50 (50%)
-<ul>
-<li>Simulate the null distribution</li>
-<li>Would you reject the null hypothesis if the observed unemployment rate was 23% in this case?</li>
-</ul></li>
-</ul>
-</section></section>
-<section>
-<section id="associations-between-two-variables" class="title-slide slide level1 center">
-<h1>Associations Between Two Variables</h1>
-
+  <p class="date">May 5, 2024</p>
 </section>
 <section id="hypotheses" class="slide level2">
 <h2>Hypotheses</h2>
@@ -813,12 +443,22 @@ Null Hypothesis: point
 <section id="résumé-experiment-example" class="slide level2">
 <h2>Résumé Experiment Example</h2>
 <p>Bertrand and Mullainathan studied racial discrimination in responses to job applications in Chicago and Boston. They sent 4,870 résumés, randomly assigning names associated with different racial groups. - Data are in <code>openintro</code> package as an object called <code>resume</code> - I will save as <code>myDat</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(openintro)</span>
+<span id="cb1-2"><a></a>myDat <span class="ot">&lt;-</span> resume </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="callbacks-by-race" class="slide level2">
 <h2>Callbacks by Race</h2>
 <p><br></p>
 <p>Remember, race of applicant is randomly assigned.</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a>mns <span class="ot">&lt;-</span> myDat <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a></a>  <span class="fu">group_by</span>(race) <span class="sc">|&gt;</span> </span>
+<span id="cb2-5"><a></a>  <span class="fu">summarize</span>(<span class="at">calls =</span> <span class="fu">mean</span>(received_callback))</span>
+<span id="cb2-6"><a></a>mns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 2
   race   calls
@@ -828,45 +468,77 @@ Null Hypothesis: point
 </div>
 </div>
 </section>
-<section id="section-4" class="slide level2">
+<section id="section" class="slide level2">
 <h2></h2>
 <p><br></p>
 <p>Let’s save the means for white and black applicants.</p>
 <p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>mean_white <span class="ot">=</span> mns<span class="sc">$</span>calls[<span class="dv">2</span>]</span>
+<span id="cb4-2"><a></a>mean_black <span class="ot">=</span> mns<span class="sc">$</span>calls[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 <p><br></p>
 <p>And calculate the treatment effect. The treatment effect is the difference in means.</p>
 <p><br></p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>teffect <span class="ot">&lt;-</span> mean_white <span class="sc">-</span> mean_black</span>
+<span id="cb5-2"><a></a>teffect</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.03203285</code></pre>
 </div>
 </div>
 </section>
-<section id="section-6" class="slide level2 center">
+<section id="section-2" class="slide level2 center">
 <h2></h2>
 <p>Before formal tests, let’s look at the data–the estimates <strong>and</strong> the confidence intervals…</p>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 <p><br></p>
 <p>First, let’s make the CIs for the white applicants.</p>
 <p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb7-2"><a></a>boot_df_white <span class="ot">&lt;-</span> myDat <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a></a>  <span class="fu">filter</span>(race <span class="sc">==</span> <span class="st">"white"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-4"><a></a>  <span class="fu">specify</span>(<span class="at">response =</span> received_callback) <span class="sc">|&gt;</span>  </span>
+<span id="cb7-5"><a></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">15000</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-6"><a></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"mean"</span>)</span>
+<span id="cb7-7"><a></a>lower_bound_white <span class="ot">&lt;-</span> boot_df_white <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">lower_bound_white =</span> <span class="fu">quantile</span>(stat, <span class="fl">0.025</span>)) <span class="sc">|&gt;</span> <span class="fu">pull</span>() </span>
+<span id="cb7-8"><a></a>upper_bound_white <span class="ot">&lt;-</span> boot_df_white <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">upper_bound_white =</span> <span class="fu">quantile</span>(stat, <span class="fl">0.975</span>)) <span class="sc">|&gt;</span> <span class="fu">pull</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 <p><br></p>
 <p>Now, let’s create the CIs for black applicants.</p>
 <p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>boot_df_black <span class="ot">&lt;-</span> myDat <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a></a>  <span class="fu">filter</span>(race <span class="sc">==</span> <span class="st">"black"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a></a>  <span class="fu">specify</span>(<span class="at">response =</span> received_callback) <span class="sc">|&gt;</span>  </span>
+<span id="cb8-4"><a></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">15000</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-5"><a></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"mean"</span>)</span>
+<span id="cb8-6"><a></a>lower_bound_black <span class="ot">&lt;-</span> boot_df_black <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">lower_bound_black =</span> <span class="fu">quantile</span>(stat, <span class="fl">0.025</span>)) <span class="sc">|&gt;</span> <span class="fu">pull</span>() </span>
+<span id="cb8-7"><a></a>upper_bound_black <span class="ot">&lt;-</span> boot_df_black <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">upper_bound_black =</span> <span class="fu">quantile</span>(stat, <span class="fl">0.975</span>)) <span class="sc">|&gt;</span> <span class="fu">pull</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="section-9" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 <p><br></p>
 <p>Now, let’s tidy the data for plotting.</p>
 <p><br></p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>plotData <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb9-2"><a></a>  <span class="at">race =</span> <span class="fu">c</span>(<span class="st">"Black"</span>, <span class="st">"White"</span>),</span>
+<span id="cb9-3"><a></a>  <span class="at">meanCalls =</span> <span class="fu">c</span>(mean_black, mean_white),</span>
+<span id="cb9-4"><a></a>  <span class="at">lower95 =</span> <span class="fu">c</span>(lower_bound_black, lower_bound_white),</span>
+<span id="cb9-5"><a></a>  <span class="at">upper95 =</span> <span class="fu">c</span>(upper_bound_black, upper_bound_white)</span>
+<span id="cb9-6"><a></a>)</span>
+<span id="cb9-7"><a></a>plotData</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 4
   race  meanCalls lower95 upper95
@@ -879,18 +551,18 @@ Null Hypothesis: point
 <section id="plot" class="slide level2">
 <h2>Plot</h2>
 
-<img data-src="week-4.2_files/figure-html/unnamed-chunk-21-1.png" width="672" class="r-stretch"></section>
+<img data-src="week-4.2_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
 <section id="plot-1" class="slide level2">
 <h2>Plot</h2>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">ggplot</span>(plotData, <span class="fu">aes</span>(<span class="at">y =</span> meanCalls, <span class="at">x =</span> race, <span class="at">ymin =</span> lower95, <span class="at">ymax =</span> upper95)) <span class="sc">+</span></span>
-<span id="cb21-2"><a></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue4"</span>) <span class="sc">+</span></span>
-<span id="cb21-3"><a></a>  <span class="fu">geom_errorbar</span>(<span class="at">width =</span> .<span class="dv">05</span>) <span class="sc">+</span></span>
-<span id="cb21-4"><a></a>  <span class="fu">theme_bw</span>()  <span class="sc">+</span></span>
-<span id="cb21-5"><a></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, .<span class="dv">15</span>) <span class="sc">+</span></span>
-<span id="cb21-6"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Race of Applicant"</span>,</span>
-<span id="cb21-7"><a></a>       <span class="at">y =</span> <span class="st">"Call Back Rate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ggplot</span>(plotData, <span class="fu">aes</span>(<span class="at">y =</span> meanCalls, <span class="at">x =</span> race, <span class="at">ymin =</span> lower95, <span class="at">ymax =</span> upper95)) <span class="sc">+</span></span>
+<span id="cb11-2"><a></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue4"</span>) <span class="sc">+</span></span>
+<span id="cb11-3"><a></a>  <span class="fu">geom_errorbar</span>(<span class="at">width =</span> .<span class="dv">05</span>) <span class="sc">+</span></span>
+<span id="cb11-4"><a></a>  <span class="fu">theme_bw</span>()  <span class="sc">+</span></span>
+<span id="cb11-5"><a></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, .<span class="dv">15</span>) <span class="sc">+</span></span>
+<span id="cb11-6"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Race of Applicant"</span>,</span>
+<span id="cb11-7"><a></a>       <span class="at">y =</span> <span class="st">"Call Back Rate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="is-this-evidence-of-racial-discrimination" class="slide level2">
@@ -1048,27 +720,38 @@ Null Hypothesis: point
 <h2>Simulating with <code>tidymodels</code></h2>
 <p><br></p>
 <p>In real life we are going to use the <code>tidymodels</code> package to do the simulation for us.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>null_dist <span class="ot">&lt;-</span> myDat <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a></a>  <span class="fu">specify</span>(<span class="at">response =</span> received_callback, <span class="at">explanatory =</span> race) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a></a>  <span class="fu">generate</span>(<span class="dv">5000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-5"><a></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in means"</span>, </span>
+<span id="cb12-6"><a></a>            <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"black"</span>)) <span class="co"># </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="visualize" class="slide level2">
 <h2>Visualize</h2>
 
-<img data-src="week-4.2_files/figure-html/unnamed-chunk-24-1.png" width="672" class="r-stretch"></section>
+<img data-src="week-4.2_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
 <section id="visualize-1" class="slide level2">
 <h2>Visualize</h2>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> null_dist, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> stat)) <span class="sc">+</span></span>
-<span id="cb22-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.01</span>, <span class="at">fill =</span> <span class="st">"steelblue4"</span>) <span class="sc">+</span></span>
-<span id="cb22-3"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Null distribution + Estimate"</span>,</span>
-<span id="cb22-4"><a></a>       <span class="at">x =</span> <span class="st">"Estimated Difference under the Null"</span>) <span class="sc">+</span>     </span>
-<span id="cb22-5"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> teffect, <span class="at">linetype=</span><span class="st">"dotted"</span>, </span>
-<span id="cb22-6"><a></a>                <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> null_dist, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> stat)) <span class="sc">+</span></span>
+<span id="cb13-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.01</span>, <span class="at">fill =</span> <span class="st">"steelblue4"</span>) <span class="sc">+</span></span>
+<span id="cb13-3"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Null distribution + Estimate"</span>,</span>
+<span id="cb13-4"><a></a>       <span class="at">x =</span> <span class="st">"Estimated Difference under the Null"</span>) <span class="sc">+</span>     </span>
+<span id="cb13-5"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> teffect, <span class="at">linetype=</span><span class="st">"dotted"</span>, </span>
+<span id="cb13-6"><a></a>                <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="calculate-the-p-value-1" class="slide level2">
+<section id="calculate-the-p-value" class="slide level2">
 <h2>Calculate the p-value</h2>
 <p><br></p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>null_dist <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a></a>  <span class="fu">filter</span>(stat <span class="sc">&gt;</span> teffect) <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a></a>  <span class="fu">summarise</span>(<span class="at">p_value =</span> <span class="fu">n</span>()<span class="sc">/</span><span class="fu">nrow</span>(null_dist)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   p_value
@@ -1088,7 +771,7 @@ Null Hypothesis: point
 </ul>
 </div>
 </section>
-<section id="your-turn-1" class="slide level2 smaller">
+<section id="your-turn" class="slide level2 smaller">
 <h2>Your Turn!</h2>
 <p><br></p>
 <ul>
@@ -1102,13 +785,13 @@ Null Hypothesis: point
 </ul>
 
 
-</section><div class="quarto-auto-generated-content">
+</section>
+    <div class="quarto-auto-generated-content">
 <p><img src="images/iaff6501-logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="https://quant4ia.rocks/">IAFF 6501 Website</a></p>
 </div>
-</div></section>
-    </div>
+</div></div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
@@ -1320,6 +1003,44 @@ Null Hypothesis: point
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

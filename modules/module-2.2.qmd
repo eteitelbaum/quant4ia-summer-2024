@@ -1,5 +1,5 @@
 ---
-title: "Module 3.2"
+title: "Module 2.2"
 subtitle: "Summarizing Data"
 format: 
   html:

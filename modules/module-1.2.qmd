@@ -1,5 +1,5 @@
 ---
-title: "Module 2.2"
+title: "Module 1.2"
 subtitle: "Line Charts and Scatter Plots"
 format: 
   html:

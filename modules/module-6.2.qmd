@@ -1,5 +1,5 @@
 ---
-title: "Module 4.2"
+title: "Module 6.2"
 subtitle: "Regression Tables and Coefficient Plots"
 format: 
   html:
@@ -23,8 +23,7 @@ execute:
 
 A very common use of tables in the social sciences is to present regression results. There are numerous packages available for presenting regression output. In this lesson, we are going to focus on one of them that I think is particularly good for both pdf and html output: `modelsummary`. `modelsummary` also includes a function (`modelplot()`) for plotting point estimates and confidence intervals. So part of the objective of this lesson is going to be to learn when you should use a table to present your regression results versus when you should use a plot. 
 
-We will be taking our example from the peace studies literature. We are going to download data using the `peacesciencer` package and use it to partially reproduce a famous analysis of conflict onset by [Fearon and Laitin](https://www-jstor-org.proxygw.wrlc.org/stable/3118222). 
-
+We will be taking our example from the peace studies literature. We are going to download data using the `peacesciencer` package and use it to partially reproduce a famous analysis of conflict onset by [Fearon and Laitin](https://www-jstor-org.proxygw.wrlc.org/stable/3118222).
 
 ## Run a regression model and display results with broom
 
@@ -50,6 +49,7 @@ conflict_df <- create_stateyears(system = 'gw') |>
 
 glimpse(conflict_df)
 ```
+
 Now let's go ahead and run the analysis. We will specify a logit model using the `glm()` function and specifying `family = binomial(link = "logit")`. We will store our model in an object called `conflict_model`. And from there we can use the `tidy()` function from the `broom` package to view the results.  
 
 Before doing this, though, try calling `summary()` from base R on the model. This provides us with a basic regression table and it is great insofar as we don't want to do anything else with these estimates. Next, go ahead and call `View()` on the model object of just click on it to see what it looks like. You will notice that the results are stored in a complicated list format.
@@ -76,8 +76,6 @@ tidy_model
 ```
 
 How did we do relative to Fearon and Latin's original analysis. Well, one thing that F&L were pretty certain about is that ethnic and religious fractionalization *do not* matter for conflict onset. But here we find a statistically significant relationship between these variables and conflict onset. But one thing we do find in common with their analysis is the importance of wealth and population. Both of these variables are significant in the expected direction. Wealthier countries experience less risk of conflict onset while more populous ones have a higher risk. 
-
-
 ## Run many regressions and display with modelsummary
 
 {{< video https://youtu.be/My6_X6x5TZw title = 'Display multiple models with modelsummary'>}}
@@ -127,7 +125,6 @@ caption = "Table 1: Predictors of Conflict Onset" # store caption
 reference = "See appendix for data sources."      # store reference notes
 ```
 
-
 Now we can call `modelsummary()`. The first argument is the list of models we want to display. Next we tell `modelsummary` that we want it to show stars for statistical significance (`stars = TRUE`). And in `gof_map`, we say that, of the many goodness of fit statistics available to us, we only want to include the number of observations. Finally we plug our title into `title = ` and a source note into `notes = `. 
 
 ```{r}
@@ -141,7 +138,6 @@ modelsummary(models,                      # display the table
              title = caption,             # title
              notes = reference)           # source note
 ```
-
 
 ## When a coefficient plot is better
 

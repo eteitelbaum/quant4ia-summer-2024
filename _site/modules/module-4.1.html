@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.533">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>IAFF 6501–Spring 2024 Schedule - Module 4.1</title>
 <style>
 code{white-space: pre-wrap;}
@@ -20,8 +17,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
-
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -42,8 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -69,23 +98,43 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
+}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 <meta property="og:title" content="IAFF 6501–Spring 2024 Schedule - Module 4.1">
-<meta property="og:description" content="Confidence Intervals">
+<meta property="og:description" content="Hypothesis Testing 1">
 <meta property="og:site_name" content="IAFF 6501--Spring 2024 Schedule">
 <meta name="twitter:title" content="IAFF 6501–Spring 2024 Schedule - Module 4.1">
-<meta name="twitter:description" content="Confidence Intervals">
+<meta name="twitter:description" content="Hypothesis Testing 1">
 <meta name="twitter:card" content="summary">
 </head>
-
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -96,16 +145,11 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/iaff6501-logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
+      <img src="../images/iaff6501-logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://blackboard.gwu.edu" title="Blackboard" class="quarto-navigation-tool px-1" aria-label="Blackboard"><i class="bi bi-mortarboard-fill"></i></a>
     <a href="https://classroom.github.com" title="Github Classroom" class="quarto-navigation-tool px-1" aria-label="Github Classroom"><i class="bi bi-github"></i></a>
@@ -125,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
+<li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Course Information</span></a>
@@ -133,8 +177,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
@@ -165,7 +209,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
@@ -174,8 +218,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1</span></a>
@@ -200,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
@@ -209,8 +253,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../assignments/homework-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Homework 1</span></a>
@@ -229,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
@@ -238,8 +282,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../project/project-description.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Final Project</span></a>
@@ -252,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
@@ -261,8 +305,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../modules/module-1.1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Module 1.1</span></a>
@@ -335,22 +379,24 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing">Hypothesis testing</a></li>
+  <li><a href="#jobs-training-program-example" id="toc-jobs-training-program-example" class="nav-link" data-scroll-target="#jobs-training-program-example">Jobs training program example</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/eteitelbaum/dataviz-summer-2023/edit/main/modules/module-4.1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/eteitelbaum/dataviz-summer-2023/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/module-1.1.html">Course Modules</a></li><li class="breadcrumb-item"><a href="../modules/module-4.1.html">Module 4.1</a></li></ol></nav>
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/module-1.1.html">Course Modules</a></li><li class="breadcrumb-item"><a href="../modules/module-4.1.html">Module 4.1</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">Module 4.1</h1>
-<p class="subtitle lead">Confidence Intervals</p>
+<p class="subtitle lead">Hypothesis Testing 1</p>
 </div>
 
 
@@ -364,15 +410,143 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header>
+</header><div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Prework
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Read Chapter 16 of <a href="https://openintro-ims.netlify.app/">IMS</a>
+</li>
+</ul>
+</div>
+</div>
+<section id="overview" class="level2"><h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>In this module, we will introduce the concept of hypothesis testing. Hypothesis testing is a method for making inferences about a population parameter based on a sample statistic. We will discuss the key components of hypothesis testing, including the null hypothesis, the alternative hypothesis, the p-value, and the critical value. We will also work through a hypothetical example involving a jobs training program to illustrate how hypothesis testing works in practice. To get familiar with the basic intuition behind hypothesis testing, have a look at the following video:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/cn4S3QqEBRg" title="The Idea Behind Hypothesis Testing" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section><section id="hypothesis-testing" class="level2"><h2 class="anchored" data-anchor-id="hypothesis-testing">Hypothesis testing</h2>
+<p>Hypothesis testing is a method for making inferences about a population parameter based on a sample statistic. Say we have a sample statistic, like the mean of a sample, and we want to know if this sample statistic is different from a population parameter. Hypothesis testing allows us to make this determination.</p>
+<p>A key component of hypothesis testing is the <strong>null hypothesis</strong>. The null hypothesis is a statement that the population parameter is equal to a specific value. The <strong>alternative hypothesis</strong> is the statement that the population parameter is different from the specific value. You can think of the null hypothesis as the “status quo” or the idea that “nothing is going on”, and the alternative hypothesis as the research question or the idea that “something is different.”</p>
+<p>For example, say we had a bag of M&amp;Ms and we found that 90% of the M&amp;Ms were blue. We might think that this is an aberration from the normal distribution of M&amp;M colors in a typical bag of M&amp;Ms.&nbsp;In this scenario, the null hypothesis would be that the proportion of blue M&amp;Ms is equal to 0.24 (the typical proportion of blue M&amp;Ms in a bag). The alternative hypothesis would be that the proportion of blue M&amp;Ms is different from 0.24.</p>
+<p>To test our hypothesis, we are going to collect a sample from the population and create a <strong>null distribution</strong>. The null distribution is the distribution of sample statistics we would expect to see if the null hypothesis were true. We can then compare our sample statistic to the null distribution to determine if our sample statistic is significantly different from the population parameter.</p>
+<p>One concept we want to be familiar with in the context of hypothesis testing is the <strong>p-value</strong>. The p-value is the probability of observing a sample statistic as extreme as the one observed, given that the null hypothesis is true. If the p-value is less than a certain threshold called a <strong>critical value</strong> (<span class="math inline">\(\alpha\)</span>), we reject the null hypothesis. If the p-value is greater than the threshold, we fail to reject the null hypothesis. The most common critical value used in hypothesis testing is 0.05.</p>
+<p>For example, if we found that the p-value for our M&amp;M example was 0.03, this would suggest that the probability of observing a sample proportion of blue M&amp;Ms as extreme as the one observed is 0.03 (or 3%), given that the null hypothesis is true. Since 0.03 is less than 0.05, we would reject the null hypothesis that the proportion of blue M&amp;Ms is equal to 0.24 and accept the alternative hypothesis that something unusual is goin on with our bag of M&amp;Ms.&nbsp;</p>
+<p>When people report “statistically significant” results, they mean that the p-value from their analysis is less than 0.05. But it is important to remember that the .05 threshold is a convention. <em>p=0.049</em> is under the cutoff, while p=0.051 is not but substantively these are not very different.</p>
+</section><section id="jobs-training-program-example" class="level2"><h2 class="anchored" data-anchor-id="jobs-training-program-example">Jobs training program example</h2>
+<p>To get a better sense of what hypothesis testing is all about, let’s work through a hypothetical example involving a jobs training program. International development organizations are sometimes interested in providing training to people in order to help them find a job. After implementing a jobs training program, the organization might want to know if the program was successful in helping people find jobs.</p>
+<p>So let’s imagine a scenario in which the unemployment rate in a low-income country is 30%. One organization claims that its jobs training program is a success because only 15 of the 60 people that they trained did not have a job:</p>
+<blockquote class="blockquote">
+<p>“Our jobs program is a success because only 15 of the 60 people that we trained did not have a job. Thus our 25% unemployment rate beats the country’s unemployment rate of 30%.”</p>
+</blockquote>
+<p>First, is it possible to assess this hypothetical organization’s claim using the data and information presented thus far?</p>
+<p>The answer is “No.” We need to know more about how people were selected for the program in order to assess causality (e.g., were they randomly assigned?). But, we can still ask whether the unemployment rate of 25% could be due to chance.</p>
+<p>Let’s create some data to match our hypothetical example. We will create a simple dataset with 60 observations, where 15 people are unemployed and 45 people are employed.</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">jobs_program</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
+<span>  outcome <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="st">"unemployed"</span>, <span class="fl">15</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="st">"employed"</span>, <span class="fl">45</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now let’s visualize it with a bar chart.</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">jobs_program</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">outcome</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"steelblue"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Jobs program outcomes"</span>, </span>
+<span>    x <span class="op">=</span> <span class="st">"Outcome"</span>, </span>
+<span>    y <span class="op">=</span> <span class="st">"Count"</span></span>
+<span>    <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="module-4.1_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>For our null hypothesis, we will assume that the unemployment rate among those in the jobs program is no different than the country average of 30%, e.g.&nbsp;“nothing is going on.” Our alternative hypothesis will be that the unemployment rate is lower than the country average of 30%, e.g.&nbsp;“something is different.”</p>
+<p><strong>Null hypothesis (<span class="math inline">\(H_0: p = 0.30\)</span>):</strong> “There is nothing going on.”</p>
+<blockquote class="blockquote">
+<p>Unemployment rate among those in the jobs program is no different than the country average of 30%.</p>
+</blockquote>
+<p><strong>Alternative hypothesis (<span class="math inline">\(H_A\)</span>):</strong> “Something is different.”</p>
+<blockquote class="blockquote">
+<p>Unemployment rate is <strong>lower</strong> than the country average of 30%.</p>
+</blockquote>
+<p>We are then going to ask wheter, assuming the null hypothesis is true, the unemployment rate we observe be due to random chance. If yes, we do NOT reject the null hypothesis. If it is not very likely that we would observe the data due to chance, then we REJECT the null hypothesis and accept the alternative hypothesis.</p>
+<p>We are going to figure out what the distribution of outcomes we we might observe could be if nothing is going on. This is called the <strong>null distribution</strong>. We will then compare our observed data to the null distribution to see if our data is likely to have come from this distribution.</p>
+<p>In this case, we are going to simulate the null distribution by randomly sampling from the population of 60 people and calculating the proportion of unemployed people in each sample. We will do this many times to get a sense of what the null distribution looks like.</p>
+<p>The next step, then, is to set up a simulator to select samples of 60 individuals with a 30% chance of being unemployed We can use the <code>tidymodels</code> package to help with this process:</p>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#load tidymodels</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># simulate the distribution</span></span>
+<span><span class="va">null_dist</span> <span class="op">&lt;-</span> <span class="va">jobs_program</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">specify</span><span class="op">(</span>response <span class="op">=</span> <span class="va">outcome</span>, success <span class="op">=</span> <span class="st">"unemployed"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">hypothesize</span><span class="op">(</span>null <span class="op">=</span> <span class="st">"point"</span>, p <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"unemployed"</span> <span class="op">=</span> <span class="fl">0.30</span>, <span class="st">"employed"</span> <span class="op">=</span> <span class="fl">0.70</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">generate</span><span class="op">(</span>reps <span class="op">=</span> <span class="fl">2000</span>, type <span class="op">=</span> <span class="st">"draw"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">calculate</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"prop"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In this code, we are specifying the response variable as <code>outcome</code> and the success variable as <code>unemployed</code>. We are hypothesizing that the probability of being unemployed is 0.30 and the probability of being employed is 0.70. We are generating 2000 samples and calculating the proportion of unemployed people in each sample.</p>
+<p>Let’s visualize the null distribution. We can do this by using the <code>visualize()</code> function from the <code>infer</code> package, which is part of the <code>tidymodels</code> suite of packages.</p>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">null_dist</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">visualize</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Null distribution"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Proportion Unemployed"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Count"</span></span>
+<span>       <span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="module-4.1_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Now let’s calculate the p-value.</p>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">null_dist</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">get_p_value</span><span class="op">(</span>obs_stat <span class="op">=</span> <span class="fl">15</span><span class="op">/</span><span class="fl">60</span>, direction <span class="op">=</span> <span class="st">"left"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  p_value
+    &lt;dbl&gt;
+1   0.241</code></pre>
+</div>
+</div>
+<p>What does the p-value tell us? The p-value is the probability of observing a test statistic as extreme as the one we observed (15/60) under the null hypothesis. In this case, the p-value is 0.228, which means that there is a 22.8% chance of observing a proportion of unemployed people as extreme as 15/60 if the null hypothesis is true. This p-value is well above the critical value of .05, indicating that we do not have enough evidence to reject the null hypothesis.</p>
+<p>Let’s visualize the p-value against the null distribution. We can do this by using the <code>shade_p_value()</code> function from the <code>infer</code> package and adding that to our histogram of the null distribution.</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">null_dist</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">visualize</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">shade_p_value</span><span class="op">(</span>obs_stat <span class="op">=</span> <span class="fl">15</span><span class="op">/</span><span class="fl">60</span>, direction <span class="op">=</span> <span class="st">"left"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Null Distribution with shaded p-value"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Proportion Unemployed"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Count"</span></span>
+<span>       <span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="module-4.1_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>As you can see, a large proportion of the null distribution is to the left of the observed proportion of unemployed people in the jobs program. This indicates that the observed proportion is not very extreme compared to what we would expect under the null hypothesis.If the true unemployment rate were 30 percent and we draw samples of 60, about 23 percent of the time we will get an unemployment rate lower than the one among the participants in the program (simply due to random chance). Again, this entails that we do NOT reject the null hypothesis because the unemployment rate in the sample could likely have been due to chance.</p>
 
 
-<p>Content coming soon…</p>
-
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -915,10 +1089,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../modules/module-3.2.html" class="pagination-link  aria-label=" module="" 3.2"="">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="../modules/module-3.2.html" class="pagination-link  aria-label=" module="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Module 3.2</span>
       </a>          
   </div>
@@ -929,21 +1101,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>© Copyright 2024, <a href="https://emmanuel.teitelbaum.com">Emmanuel Teitelbaum</a></p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/eteitelbaum/dataviz-summer-2023/edit/main/modules/module-4.1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/eteitelbaum/dataviz-summer-2023/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/eteitelbaum/dataviz-summer-2023/edit/main/modules/module-4.1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/eteitelbaum/dataviz-summer-2023/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>. 👷🛠️</p>
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>

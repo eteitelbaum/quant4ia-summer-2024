@@ -11,12 +11,6 @@ execute:
   warning: false
 ---
 
-::: {.callout-tip}
-## Prework
-
-- Read Chapter 20 of [IMS](https://openintro-ims.netlify.app/)
-:::
-
 ## Overview
 
 In the previous module, we learned about hypothesis testing and how to test hypotheses about a single mean. In this module, we will learn how to test hypotheses about two means. We will learn about treatment effects, which are the differences in means between two groups. We will learn how to permute our data to simulate a null distribution of treatment effects and compare this with the observed treatment effect to test the null hypothesis. And we will apply these skills to a real-world example from the field of international development.

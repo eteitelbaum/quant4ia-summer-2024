@@ -11,12 +11,6 @@ execute:
   warning: false
 ---
 
-::: {.callout-tip}
-## Prework
-
-- Read Chapter 16 of [IMS](https://openintro-ims.netlify.app/)
-:::
-
 ## Overview
 
 In this module, we will introduce the concept of hypothesis testing. Hypothesis testing is a method for making inferences about a population parameter based on a sample statistic. We will discuss the key components of hypothesis testing, including the null hypothesis, the alternative hypothesis, the p-value, and the critical value. We will also work through a hypothetical example involving a jobs training program to illustrate how hypothesis testing works in practice. To get familiar with the basic intuition behind hypothesis testing, have a look at the following video: 

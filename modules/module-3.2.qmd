@@ -18,7 +18,6 @@ execute:
   - `openintro`
   - `infer`
   - `tidymodels`
-- Read Chapters 11 and 12 of [IMS](https://openintro-ims.netlify.app/)
 :::
 
 # Overview

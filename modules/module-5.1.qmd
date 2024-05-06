@@ -11,12 +11,6 @@ execute:
   warning: false
 ---
 
-::: {.callout-tip}
-## Prework
-
-- Read Chapter 24 of [IMS](https://openintro-ims.netlify.app/)
-:::
-
 ## Overview
 
 {{< video https://youtu.be/dLc-lfEEYss?si=-Zelb-HBAP-MPvnF title='Linear Regression 1' >}}

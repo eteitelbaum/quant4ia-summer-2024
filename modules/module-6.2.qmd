@@ -76,6 +76,7 @@ tidy_model
 ```
 
 How did we do relative to Fearon and Latin's original analysis. Well, one thing that F&L were pretty certain about is that ethnic and religious fractionalization *do not* matter for conflict onset. But here we find a statistically significant relationship between these variables and conflict onset. But one thing we do find in common with their analysis is the importance of wealth and population. Both of these variables are significant in the expected direction. Wealthier countries experience less risk of conflict onset while more populous ones have a higher risk. 
+
 ## Run many regressions and display with modelsummary
 
 {{< video https://youtu.be/My6_X6x5TZw title = 'Display multiple models with modelsummary'>}}

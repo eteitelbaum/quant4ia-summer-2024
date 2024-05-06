@@ -15,7 +15,6 @@ execute:
 ## Prework
 
 - Install the `ggridges` package by running `install.packages("ggridges")` in the console.
-- Read chapters 4 and 5 of [IMS](https://openintro-ims.netlify.app/)
 :::
 
 # Overview

@@ -1,6 +1,6 @@
 ---
 title: "Module 2.1"
-subtitle: "Working with APIs"
+subtitle: "Working with Data"
 format: 
   html:
     code-link: true
@@ -25,7 +25,7 @@ In this module working, we are going to be working with data from an [API](https
 
 Along the way, we are going to continue to extend our data wrangling skills. We will learn some new functions in `dplyr` that will help us get our data into a usable form for analysis. We are also going to cover in depth some common data science workflows, including filtering observations, selecting variables, summarizing data for different groups, and sorting data based on column values. 
 
-## Downloading data from the V-Dem API
+## Downloading and Transforming Data
 
 {{< video https://youtu.be/ScQD47eJeAE title='Downloading Data from V-Dem' >}}
 

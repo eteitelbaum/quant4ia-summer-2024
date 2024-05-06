@@ -296,7 +296,7 @@
     "href": "course-syllabus.html",
     "title": "IAFF 6501: Quantitative Analysis for IA Practitioners",
     "section": "",
-    "text": "Location: Duques 151\n\nInstructor: Prof. Emmanuel Teitelbaum\nEmail: ejt@gwu.edu\nOffice Hours: Tuesdays, 3-5 p.m.\n\nTeaching Assistant: Yuchen Zhao\nEmail: yuchen.zhao1@gwu.edu\nOffice Hours: Wednesdays, 1:00 - 3:00 p.m.\n\nTeaching Assistant: Jeffrey Kuo\nEmail: jeffkuo@gwu.edu\nOffice Hours: Wednesdays, 4:00 - 6:00 p.m.\n\nCredit Hours: 3.0.",
+    "text": "Location: Online\nTime: TR 5:10 - 6:30 p.m.\nInstructor: Prof. Emmanuel Teitelbaum\nEmail: ejt@gwu.edu\nOffice Hours: Tuesdays, 3-5 p.m.\n\nCredit Hours: 3.0.",
     "crumbs": [
       "Course Information",
       "Syllabus"
@@ -307,7 +307,7 @@
     "href": "course-syllabus.html#course-information",
     "title": "IAFF 6501: Quantitative Analysis for IA Practitioners",
     "section": "",
-    "text": "Location: Duques 151\n\nInstructor: Prof. Emmanuel Teitelbaum\nEmail: ejt@gwu.edu\nOffice Hours: Tuesdays, 3-5 p.m.\n\nTeaching Assistant: Yuchen Zhao\nEmail: yuchen.zhao1@gwu.edu\nOffice Hours: Wednesdays, 1:00 - 3:00 p.m.\n\nTeaching Assistant: Jeffrey Kuo\nEmail: jeffkuo@gwu.edu\nOffice Hours: Wednesdays, 4:00 - 6:00 p.m.\n\nCredit Hours: 3.0.",
+    "text": "Location: Online\nTime: TR 5:10 - 6:30 p.m.\nInstructor: Prof. Emmanuel Teitelbaum\nEmail: ejt@gwu.edu\nOffice Hours: Tuesdays, 3-5 p.m.\n\nCredit Hours: 3.0.",
     "crumbs": [
       "Course Information",
       "Syllabus"
@@ -549,7 +549,7 @@
     "href": "project/project-datasets.html",
     "title": "Datasets",
     "section": "",
-    "text": "Here are some datasets that you might consider using for your final project:\n\nGoogle Public Data Explorer contains information about dozens of databases related to governance and the economy. You cannot download the raw data from Google, but you can use the site to visualize the data and then follow the link to the original source.\nILOSTAT is the statistical database of the International Labour Organisation. It has data pertaining to labor, working conditions, industrial relations, poverty and inequality.\nKaggle has data on just about anything you can think of. Very usable, clean data. Just stick to the social science stuff for your project.\nOECD DATA provides data related to the performance of high income countries.\nOur World in Data is a good general resource for political economy data. The site is centered around blog posts but you can also search for a topic, view a visualization related to that topic and then download the data used to create it.\nStatista is a good place to look for data on more niche topics.\nUNCTADstat is the United Nations Conference on Trade and Development statistical database. It provides harmonized data on a range of topics related to economic performance, trade and statistics.\nThe UN Human Development Reports include a number of important indicators related to human development, gender and sustainable development goals (SDGs).\nVarieties of Democracy (V-DEM) provides original measures of the quality of democracy for every country dating back to the 18th century.\nWorld Bank Development Indicators (WDI) is the primary World Bank database for development data from officially-recognized international sources.\nThe World Bank DataBank provides access to dozens of additional World Bank databases on topics such as regional development, governance, education, gender and the environment.\n\nFor information on more specific resources available, see this page on the Gelman Library website.",
+    "text": "Here are some datasets that you might consider using for your final project:\n\nfredr is an R package that provides access to the Federal Reserve Economic Data (FRED) API. FRED is a comprehensive database of economic data maintained by the Federal Reserve Bank of St. Louis. The package allows you to search for and download data from FRED directly into R.\nGoogle Public Data Explorer contains information about dozens of databases related to governance and the economy. You cannot download the raw data from Google, but you can use the site to visualize the data and then follow the link to the original source.\nILOSTAT is the statistical database of the International Labour Organisation. It has data pertaining to labor, working conditions, industrial relations, poverty and inequality.\nKaggle has data on just about anything you can think of. Very usable, clean data. Just stick to the social science stuff for your project. You can easily download CSV files from Kaggle but you can also access the data through the Kaggle API.\nOECD DATA provides data related to the performance of high income countries.\nOur World in Data is a good general resource for political economy data. The site is centered around blog posts but you can also search for a topic, view a visualization related to that topic and then download the data used to create it.\npeacesciencer is an R package maintained by Steve Miller that compiles data from a number of sources that are useful for peace and conflict studies analysis\nStatista is a good place to look for data on more niche topics.\nUNCTADstat is the United Nations Conference on Trade and Development statistical database. It provides harmonized data on a range of topics related to economic performance, trade and statistics.\nThe UN Human Development Reports include a number of important indicators related to human development, gender and sustainable development goals (SDGs).\nThe unvotes package provides data on United Nations General Assembly voting patterns.\nVarieties of Democracy (V-DEM) provides original measures of the quality of democracy for every country dating back to the 18th century. You can access vdem data through the vdemdata package.\nWorld Bank Development Indicators (WDI) is the primary World Bank database for development data from officially-recognized international sources. You can access WB Development Indicators through the WDI package or the wbstats package.\nThe World Bank DataBank provides access to dozens of additional World Bank databases on topics such as regional development, governance, education, gender and the environment. You can access world bank data through the wbstats package.\n\nFor information on more specific resources available, see this page on the Gelman Library website.",
     "crumbs": [
       "Final Project",
       "Datasets"
@@ -2175,7 +2175,7 @@
     "href": "weeks/week-3.html",
     "title": "Week 3",
     "section": "",
-    "text": "Content coming soon…",
+    "text": "Important\n\n\n\nQuiz 3 due by 11:59pm on Friday, June 7",
     "crumbs": [
       "Weekly Materials",
       "Week 3"
@@ -2186,7 +2186,7 @@
     "href": "weeks/week-4.html",
     "title": "Week 4",
     "section": "",
-    "text": "Content coming soon…",
+    "text": "Important\n\n\n\n\nQuiz 4 due by 11:59pm on Friday, June 14\nHomework Assignment 2 due by 11:59pm on Monday, June 17",
     "crumbs": [
       "Weekly Materials",
       "Week 4"
@@ -2197,12 +2197,12 @@
     "href": "weeks/week-6.html",
     "title": "Week 6",
     "section": "",
-    "text": "Content coming soon…"
+    "text": "Important\n\n\n\n\nQuiz 6 due by 11:59pm on Friday, June 28\nHomework Assignment 3 due by 11:59pm on Saturday, June 29\nFinal Project due by 11:59pm on Saturday, June 29"
   },
   {
     "objectID": "assignments/homework-2.html",
     "href": "assignments/homework-2.html",
-    "title": "Assignment 2",
+    "title": "Homework 2",
     "section": "",
     "text": "Community Driven Development (CDD) programs have become increasingly popular in international development over the past several decades. CDD programs directly involve impacted communities in the selection, design, and implementation of development projects. Usually, this also involves building upon or creating community level organizations (or committees) that are involved with the projects, with the goal of creating democratic and inclusive decision-making processes. See this 3ie working paper for discussion of some common features of CDD.\nGiven these design features, proponents of CDD argue that these programs should (a) improve the quality and impact of development projects (e.g., public goods) AND (b) improve social cohesion, inclusion, and local governance. For this reason, CDD has been implemented in a number of post-conflict settings, where the hope is that CDD can both improve development outcomes and contribute to rebuilding social cohesion and governance (which are often harmed by conflict).\nDoes CDD improve development outcomes? Does it improve social cohesion after conflict? Your goal in this assignment is to answer these questions, using data from an evaluation of a CDD program in post-conflict Sierra Leone.\nThe relevant files for this assignment are available in the classwork folder in the homework-2 file.",
     "crumbs": [
@@ -2213,7 +2213,7 @@
   {
     "objectID": "assignments/homework-2.html#overview",
     "href": "assignments/homework-2.html#overview",
-    "title": "Assignment 2",
+    "title": "Homework 2",
     "section": "",
     "text": "Community Driven Development (CDD) programs have become increasingly popular in international development over the past several decades. CDD programs directly involve impacted communities in the selection, design, and implementation of development projects. Usually, this also involves building upon or creating community level organizations (or committees) that are involved with the projects, with the goal of creating democratic and inclusive decision-making processes. See this 3ie working paper for discussion of some common features of CDD.\nGiven these design features, proponents of CDD argue that these programs should (a) improve the quality and impact of development projects (e.g., public goods) AND (b) improve social cohesion, inclusion, and local governance. For this reason, CDD has been implemented in a number of post-conflict settings, where the hope is that CDD can both improve development outcomes and contribute to rebuilding social cohesion and governance (which are often harmed by conflict).\nDoes CDD improve development outcomes? Does it improve social cohesion after conflict? Your goal in this assignment is to answer these questions, using data from an evaluation of a CDD program in post-conflict Sierra Leone.\nThe relevant files for this assignment are available in the classwork folder in the homework-2 file.",
     "crumbs": [
@@ -2224,7 +2224,7 @@
   {
     "objectID": "assignments/homework-2.html#the-gobifo-program-in-sierra-leone",
     "href": "assignments/homework-2.html#the-gobifo-program-in-sierra-leone",
-    "title": "Assignment 2",
+    "title": "Homework 2",
     "section": "The GoBifo Program in Sierra Leone",
     "text": "The GoBifo Program in Sierra Leone\nSierra Leone was devastated by a civil war lasting from 1991 to 2002. In the post-conflict context, the Ministry of Local Government and Community Development implemented the GoBifo (“forge ahead”) CDD project in Sierra Leone from 2005-2009 (with support from the World Bank and other international donors). See this report for a detailed summary of the program.\nThe program had two key components:\n\nBlock grants of about 4,667 dollars (about 100 per household in each community) that communities could allocate to local development projects, skills trainings, and small-business investment.\n“Technical assistance that promoted democratic decision-making, the participation of socially marginalized women and youth in local politics, and transparent budgeting practices” (Casey, Glennerster, and Miguel 2012)\n\nThe GiBifo program also included an impact evaluation, conducted by economists Katherine Casey, Rachel Glennerster, and Edward Miguel. The academic paper generated from the project is in the References section (Casey, Glennerster, and Miguel 2012).\nWait until after you complete your assignment to read the full paper.\nImportantly, the impact evaluation included randomization: communities in the study were randomly assigned to receive the GoBifo program, or not. In this sense, the impact evaluation was similar to a clinical drug trial, where some subjects are randomly assigned to receive the medicine while others do not receive it. This aspect of the design makes it easier to assess the causal impact of this project: we can compare outcomes in the treatment (GoBifo program) and control groups, and test for whether any differences we observe are likely to be due to chance.",
     "crumbs": [
@@ -2235,7 +2235,7 @@
   {
     "objectID": "assignments/homework-2.html#load-data-and-packages",
     "href": "assignments/homework-2.html#load-data-and-packages",
-    "title": "Assignment 2",
+    "title": "Homework 2",
     "section": "Load Data and Packages",
     "text": "Load Data and Packages\nYou can use the code below to load the packages and data. Make sure the .csv file is saved in your RProj folder for this project.\n\nlibrary(tidyverse)\nlibrary(tidymodels)\n\n\nmyData &lt;- read_csv(\"gobifo_data.csv\")",
     "crumbs": [
@@ -2246,7 +2246,7 @@
   {
     "objectID": "assignments/homework-2.html#data",
     "href": "assignments/homework-2.html#data",
-    "title": "Assignment 2",
+    "title": "Homework 2",
     "section": "Data",
     "text": "Data\n“gobifo_data.csv” provides a condensed version of the data collected by Casey, Glennerster, and Miguel (2012) for their evaluation of the project. The study team gathered literally hundreds of outcome variables, and the paper includes an interesting discussion of how they analyze the data and interpret the results given the large number of outcomes they measured.\nThe unit of analysis (or row in the dataset) is the village.\nFor our purposes, we will focus on a smaller set of variables, summarized below:\n\nTreatment variable (named t in the data): this equals treatment if the community was randomly assigned to be in the program, and control if not. As a character variable, tidymodels will automatically recognize it as a factor. But be sure to use quotation marks when working with the two categories, e.g. filter(t == \"treatment\").\nCommunity Decision Making Infrastructure: Is there a village development committee in the community? (vdc)\nPublic Goods: Is there a functioning primary school in the community? (f_psch)\nInclusion, Gender equality in participatory decision making (role_wmn).\n\n“Enumerator account of how actively women participated in the deliberation compared to men, ranging from 5 = no difference between women and men to 1 = women not active at all compared to men”\n\nSocial Capital: Trust in other in the community (trust_own)\nConflict: Percentage of respondents in the village that reported they had NO conflicts/disputes with others that required outside intervention (no_conflict)",
     "crumbs": [
@@ -2257,7 +2257,7 @@
   {
     "objectID": "assignments/homework-2.html#part-1-setup-and-load-data-10-points",
     "href": "assignments/homework-2.html#part-1-setup-and-load-data-10-points",
-    "title": "Assignment 2",
+    "title": "Homework 2",
     "section": "Part 1: Setup and Load Data (10 points)",
     "text": "Part 1: Setup and Load Data (10 points)\n\nCreate a folder and an RProj file for this assignment. Save “gobifo_data.csv” in that folder. Create a new Quarto document where you will complete the work for this assignment. Make sure to include a title, your name, and the date. (1 point)\nCreate a code chunk that loads the packages you will need: tidyverse and tidymodels (1 point)\nUse read_csv() to read the “gobifo_data.csv” data in to RStudio. Save the dataset as an object called “myData” (3 points)\nExamine the data. How many observations (villages) are there in the study? You can use glimpse() to determine the number of rows. How many were in the treatment (t) group (in the program) and how many were in control? You can use summarize() for this calculation. (5 points)",
     "crumbs": [
@@ -2268,7 +2268,7 @@
   {
     "objectID": "assignments/homework-2.html#part-2-generate-estimates-and-95-percent-confidence-intervals-30-points",
     "href": "assignments/homework-2.html#part-2-generate-estimates-and-95-percent-confidence-intervals-30-points",
-    "title": "Assignment 2",
+    "title": "Homework 2",
     "section": "Part 2: Generate Estimates and 95 Percent Confidence Intervals (30 points)",
     "text": "Part 2: Generate Estimates and 95 Percent Confidence Intervals (30 points)\nThere are five response variables in the data. Each of these corresponds to a different outcome of interest: village decision making infrastructure (vdc), public goods (f_psch), inclusion/gender equality (role_wmn), social capital and trust (trust_own), and social conflict (no_conflict).\n\nFor each of the outcomes: use group_by() and summarize() to calculate the mean of each response variable in both treatment and control villages. (5 points)\nSelect TWO outcome variables of interest to you. For each, use tidymodels to generate 95 percent confidence intervals around these estimates. You should do this for villages in treatment and control separately. (10 points)\nStore your estimates and the upper and lower bounds of your confidence intervals for future use. Label this object estimates. (5 points)\nWrite a short paragraph that correctly interprets the confidence intervals in treatment and control groups for both outcomes you selected. Based on your confidence intervals, what is your initial conclusion about whether the program had an impact on the outcome variables you selected. (10 points)",
     "crumbs": [
@@ -2279,7 +2279,7 @@
   {
     "objectID": "assignments/homework-2.html#part-3-graph-your-estimates-and-confidence-intervals-20-points",
     "href": "assignments/homework-2.html#part-3-graph-your-estimates-and-confidence-intervals-20-points",
-    "title": "Assignment 2",
+    "title": "Homework 2",
     "section": "Part 3: Graph your estimates and confidence intervals (20 points)",
     "text": "Part 3: Graph your estimates and confidence intervals (20 points)\n\nFor both outcomes you chose, graph your estimate and 95 percent confidence interval in treatment and control groups. You can produce a bar plot or use geom_point, whichever you think best displays the information. This should generate 2 separate graphs, one for each outcome. For full credit, produce graphs that you could use professionally: that is, these graphs should use appropriate labels, colors, and a nice theme (15 points)\n\nBonus 2 points if you can figure out how to include all of this information on one graph!\n\nWrite a short paragraph interpreting the graphs: what do they teach us about the impact of the program on the two outcomes in treatment vs control. (5 points)",
     "crumbs": [
@@ -2290,7 +2290,7 @@
   {
     "objectID": "assignments/homework-2.html#part-4-conduct-hypothesis-tests-30-points",
     "href": "assignments/homework-2.html#part-4-conduct-hypothesis-tests-30-points",
-    "title": "Assignment 2",
+    "title": "Homework 2",
     "section": "Part 4: Conduct Hypothesis Tests (30 points)",
     "text": "Part 4: Conduct Hypothesis Tests (30 points)\nIn this section, you wil conduct hypothesis tests that assess whether the GoBifo program had an impact.\n\nFor the two outcomes you selected: Clearly state the null hypothesis and the alternative hypothesis for each test. Write these out in a list. (5 points)\nFor each outcome, calculate the treatment effect of the program: this is the mean in treatment minus the mean in control. What are the treatment effects? (5 points)\nFor each outcome, use tidymodels to conduct a hypothesis test to assess whether the treatment effects you estimate are likely to be due to chance. For each, produce the p-value. (10 points)\nSelect one outcome: make a histogram of the null distribution from your hypothesis test. Adjust the bar width as needed. Include a dotted vertical line with your estimate on the plot. Generally, what does this graph tell you about how likely your treatment effect is to be due to chance alone? (5 points)\nInterpret both p-values in language that people who know nothing about statistics might understand. For each outcome (response) variable, do you reject the null hypothesis? (5 points)",
     "crumbs": [
@@ -2301,7 +2301,7 @@
   {
     "objectID": "assignments/homework-2.html#part-5-interpretation-and-conclusion-10-points",
     "href": "assignments/homework-2.html#part-5-interpretation-and-conclusion-10-points",
-    "title": "Assignment 2",
+    "title": "Homework 2",
     "section": "Part 5: Interpretation and Conclusion (10 points)",
     "text": "Part 5: Interpretation and Conclusion (10 points)\nWrite 2-3 paragraphs that summarize the results of your analysis and accurately interpret them. What is the big picture takeaway of your analysis? What does your analysis teach us about the impact of this CDD program? Are there policy or program implications of the findings for CDD in post-conflict settings?",
     "crumbs": [
@@ -2312,7 +2312,7 @@
   {
     "objectID": "assignments/homework-2.html#extra-credit",
     "href": "assignments/homework-2.html#extra-credit",
-    "title": "Assignment 2",
+    "title": "Homework 2",
     "section": "Extra Credit",
     "text": "Extra Credit\n\nThere are three outcome variables you did not select: create visualizions that display the means and 95% confidence intervals in treatment and control groups for these three outcomes. (2 points)\nConduct hypothesis tests for each the three additional outcomes. What do you conclude from each test? (2 points)\nWrite a paragraph updating your conclusion about the impact of the program and your interpretation of all of the evidence (2 points)\nCreate a single visualization that could “tell the whole story” of the results from this study. (3 points)\n\n\n\n\n\n\n\nSubmission Instructions\n\n\n\nHead over to Blackboard and go to the Homework 2 assignment. There you will find a link that you can use to upload your project folder.\nIf you worked with a partner, only one of you should submit the project folder but both of you should still make a submission to Blackboard so that we have a submission to grade. If you have worked with someoone but still have a substantially different project, you can submit separately.\nThe person submitting the project folder should take a screen shot of the confirmation message (“Finished Uploading”) and share it with the other group members. This screen shot will be what you submit in Blackboard.\nNext, click “Create Submission” and write a statement stating whether you worked on the project independently or whether you are submitting jointly with someone else. Also note whether you used a large language model (LLM) like ChatGPT to help you with the work and which parts of the assignment you used the LLM for. It is fine to use an LLM to help with your code but you must acknowledge the use of it in your submission.\nThen, upload the screenshot you saved in the first step. Now submit the assignment.\nPlease remember to upload your entire project folder and not just the Quarto document.",
     "crumbs": [
@@ -2519,14 +2519,14 @@
     "href": "weeks/week-5.html",
     "title": "Week 5",
     "section": "",
-    "text": "Content coming soon…"
+    "text": "Important\n\n\n\nQuiz 5 due by 11:59pm on Friday, June 21"
   },
   {
     "objectID": "weeks/week-1.html",
     "href": "weeks/week-1.html",
     "title": "Week 1",
     "section": "",
-    "text": "Important\n\n\n\nQuiz due by 11:59pm on Monday, June 3",
+    "text": "Important\n\n\n\nQuiz 1 due by 11:59pm on Friday, May 24",
     "crumbs": [
       "Weekly Materials",
       "Week 1"
@@ -2537,7 +2537,7 @@
     "href": "weeks/week-1.html#readings",
     "title": "Week 1",
     "section": "Readings",
-    "text": "Readings\n📖 r4ds, ch 7\n📖 r4ds, ch 2\n📖 r4ds, 10.1 - 10.4\n📖 r4ds, 12.2",
+    "text": "Readings\n📖 r4ds, chap. 7\n📖 r4ds, chap. 1\n📖 r4ds, chap. 9\n📖 r4ds, chap. 11",
     "crumbs": [
       "Weekly Materials",
       "Week 1"
@@ -2570,7 +2570,7 @@
     "href": "weeks/week-2.html",
     "title": "Week 2",
     "section": "",
-    "text": "Important\n\n\n\nQuiz due by 11:59pm on r advdate2(mon, 3).",
+    "text": "Important\n\n\n\n\nQuiz 2 due by 11:59pm on Friday, May 31.\nHomework Assignment 1 due by 11:59pm on Monday, June 3.",
     "crumbs": [
       "Weekly Materials",
       "Week 2"
@@ -2581,7 +2581,7 @@
     "href": "weeks/week-2.html#readings",
     "title": "Week 2",
     "section": "Readings",
-    "text": "Readings\n📖 r4ds, ch 3\n📖 Lipset, Some Social Requisites of Democracy",
+    "text": "Readings\n📖 r4ds, chap. 3\n📖 Lipset, Some Social Requisites of Democracy",
     "crumbs": [
       "Weekly Materials",
       "Week 2"
@@ -2603,7 +2603,7 @@
     "href": "weeks/week-2.html#assignments",
     "title": "Week 2",
     "section": "Assignments",
-    "text": "Assignments\n📘 Module 2 Quiz\n📘 Homework 1\n\n\n\n\n\n\nImportant\n\n\n\nHomework Assignment 1 due by 11:59pm on r advdate2(mon, 4).",
+    "text": "Assignments\n📘 Module 2 Quiz\n🧮 Homework 1",
     "crumbs": [
       "Weekly Materials",
       "Week 2"
@@ -2642,7 +2642,7 @@
     "href": "index.html",
     "title": "Course Schedule",
     "section": "",
-    "text": "This page displays an outline of the topics, content, and assignments for the term. Each module starts on a Monday. There are no assignments due on Sundays.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModule\nDate\nTopic\nReadings\nReference\nSlides\nVideos\nAssignments\n\n\n\n\nGS\nBy May 21\nGetting Started\n\n📖\n\n🖥️, 🖥️\n\n\n\n1.1\nMay 21\nData Visualization 1\n\n📖, 📖\n🖥️\n🖥️, 🖥️\n📘\n\n\n1.2\nMay 23\nData Visualization 2\n\n📖, 📖\n🖥️\n🖥️, 🖥️\n📘\n\n\n2.1\nMay 28\nWorking with data\n\n📖\n🖥️\n🖥️\n📘\n\n\n2.2\nMay 30\nSummarizing data\n📖\n📖\n🖥️\n🖥️\n📘, 🧮\n\n\n3.1\nJun 4\nDistributions\n\n📖, 📖\n🖥️\n🖥️\n📘\n\n\n3.2\nJun 6\nSampling and Uncertainty\n\n📖, 📖\n🖥️\n🖥️\n📘\n\n\n4.1\nJun 11\nHypothesis testing 1\n\n📖\n🖥️\n🖥️\n📘\n\n\n4.2\nJun 13\nHypothesis testing 2\n📖\n📖\n🖥️\n🖥️\n📘, 🧮\n\n\n5.1\nJun 18\nLinear regression\n\n📖\n🖥️\n🖥️\n📘\n\n\n5.2\nJun 20\nMultiple regression\n\n📖\n🖥️\n🖥️\n📘\n\n\n6.1\nJun 25\nLogistic regression\n\n📖\n🖥️\n🖥️\n📘\n\n\n6.2\nJun 27\nPresenting results\n📖\n\n🖥️\n🖥️ 🖥️ 🖥️\n📘, 🧮, ✍️",
+    "text": "This page displays an outline of the topics, content, and assignments for the term. Each module starts on a Monday. There are no assignments due on Sundays.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModule\nDate\nTopic\nReadings\nReference\nSlides\nVideos\nAssignments\n\n\n\n\nGS\nBy May 21\nGetting Started\n\n📖\n\n🖥️, 🖥️\n\n\n\n1.1\nMay 21\nData Visualization 1\n\n📖, 📖\n🖥️\n🖥️, 🖥️\n\n\n\n1.2\nMay 23\nData Visualization 2\n\n📖, 📖\n🖥️\n🖥️, 🖥️\n📘\n\n\n2.1\nMay 28\nWorking with data\n\n📖\n🖥️\n🖥️\n\n\n\n2.2\nMay 30\nSummarizing data\n📖\n📖\n🖥️\n🖥️\n📘, 🧮\n\n\n3.1\nJun 4\nDistributions\n\n📖, 📖\n🖥️\n🖥️\n\n\n\n3.2\nJun 6\nSampling and Uncertainty\n\n📖, 📖\n🖥️\n🖥️\n📘\n\n\n4.1\nJun 11\nHypothesis testing 1\n\n📖\n🖥️\n🖥️\n\n\n\n4.2\nJun 13\nHypothesis testing 2\n📖\n📖\n🖥️\n🖥️\n📘, 🧮\n\n\n5.1\nJun 18\nLinear regression\n\n📖\n🖥️\n🖥️\n\n\n\n5.2\nJun 20\nMultiple regression\n\n📖\n🖥️\n🖥️\n📘\n\n\n6.1\nJun 25\nLogistic regression\n\n📖\n🖥️\n🖥️\n\n\n\n6.2\nJun 27\nPresenting results\n📖\n\n🖥️\n🖥️ 🖥️ 🖥️\n📘, 🧮, ✍️",
     "crumbs": [
       "Course Information",
       "Schedule"
@@ -4756,5 +4756,113 @@
       "Course Modules",
       "Module 5.1"
     ]
+  },
+  {
+    "objectID": "weeks/week-3.html#readings",
+    "href": "weeks/week-3.html#readings",
+    "title": "Week 3",
+    "section": "Readings",
+    "text": "Readings\n📖 IMS, chap. 4\n📖 IMS, chap. 5\n📖 IMS, chap. 11\n📖 IMS, chap. 12",
+    "crumbs": [
+      "Weekly Materials",
+      "Week 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week-3.html#videos",
+    "href": "weeks/week-3.html#videos",
+    "title": "Week 3",
+    "section": "Videos",
+    "text": "Videos\n🖥 Discrete and Continuous Variables\n🖥 Introduction to Sampling Distributions",
+    "crumbs": [
+      "Weekly Materials",
+      "Week 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week-3.html#assignments",
+    "href": "weeks/week-3.html#assignments",
+    "title": "Week 3",
+    "section": "Assignments",
+    "text": "Assignments\n📘 Module 2 Quiz",
+    "crumbs": [
+      "Weekly Materials",
+      "Week 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4.html#readings",
+    "href": "weeks/week-4.html#readings",
+    "title": "Week 4",
+    "section": "Readings",
+    "text": "Readings\n📖 IMS, chap. 16\n📖 IMS, chap. 20\n📖 Reshaping Institutions",
+    "crumbs": [
+      "Weekly Materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4.html#videos",
+    "href": "weeks/week-4.html#videos",
+    "title": "Week 4",
+    "section": "Videos",
+    "text": "Videos\n🖥 Hypothesis Testing\n🖥 Permutation Hypothesis Testing",
+    "crumbs": [
+      "Weekly Materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4.html#assignments",
+    "href": "weeks/week-4.html#assignments",
+    "title": "Week 4",
+    "section": "Assignments",
+    "text": "Assignments\n📘 Module 4 Quiz\n🧮 Homework 2",
+    "crumbs": [
+      "Weekly Materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-5.html#readings",
+    "href": "weeks/week-5.html#readings",
+    "title": "Week 5",
+    "section": "Readings",
+    "text": "Readings\n📖 IMS, chap. 7\n📖 IMS, chap. 8"
+  },
+  {
+    "objectID": "weeks/week-5.html#videos",
+    "href": "weeks/week-5.html#videos",
+    "title": "Week 5",
+    "section": "Videos",
+    "text": "Videos\n🖥 Linear Regressin with One Variable\n🖥 Linear Regression with Multiple Variables"
+  },
+  {
+    "objectID": "weeks/week-5.html#assignments",
+    "href": "weeks/week-5.html#assignments",
+    "title": "Week 5",
+    "section": "Assignments",
+    "text": "Assignments\n📘 Module 5 Quiz"
+  },
+  {
+    "objectID": "weeks/week-6.html#readings",
+    "href": "weeks/week-6.html#readings",
+    "title": "Week 6",
+    "section": "Readings",
+    "text": "Readings\n📖 IMS, chap. 9"
+  },
+  {
+    "objectID": "weeks/week-6.html#videos",
+    "href": "weeks/week-6.html#videos",
+    "title": "Week 6",
+    "section": "Videos",
+    "text": "Videos\n🖥 Logistic Regression\n🖥 Display Regression Results with Broom\n🖥 Make a Regression Table with Model Summary\n🖥 Make a Coefficient Plot"
+  },
+  {
+    "objectID": "weeks/week-6.html#assignments",
+    "href": "weeks/week-6.html#assignments",
+    "title": "Week 6",
+    "section": "Assignments",
+    "text": "Assignments\n📘 Module 6 Quiz\n🧮 Homework 3\n🖋️ Final Project"
   }
 ]

@@ -1,8 +1,8 @@
 {
-  "hash": "bec821b8fa6ef19210eb10c9e34bf7b9",
+  "hash": "33e5b8d9e5ea21dcd53121a7d5c919f1",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Week 2\"\nsubtitle: \"Basic Data Visualization\"\nformat: html\n---\n\n\n\n\n::: {.callout-important}\nQuiz due by 11:59pm on Monday, June 3\n:::\n\n## Readings\n\n| 📖 [r4ds, ch 7](https://r4ds.hadley.nz/data-import)\n| 📖 [r4ds, ch 2](https://r4ds.hadley.nz/data-visualize.html)\n| 📖 [r4ds, 10.1 - 10.4](https://r4ds.hadley.nz/layers.html)\n| 📖 [r4ds, 12.2](https://r4ds.hadley.nz/communication.html)\n\n## Videos\n\n| 🖥 [Make a Bar Chart in R with ggplot2](https://youtu.be/QG1oDJPoIio)\n| 🖥 [Make a Histogram in R with ggplot2](https://youtu.be/-1YhCql-gMo)\n| 🖥 [Make a Line Chart in R with ggplot2](https://youtu.be/PnmQ2MFQpIc)\n| 🖥 [Make a Scatterplot in R with ggplot2](https://youtu.be/FiosjUVyfLM)\n\n## Assignments\n\n| 📘 [Module 2 Quiz](https://blackboard.gwu.edu/ultra/courses/_395476_1/cl/outline)\n\n",
+    "markdown": "---\ntitle: \"Week 2\"\nsubtitle: \"Data Wrangling\"\nformat: html\n---\n\n\n\n\n::: {.callout-important}\n- Quiz 2 due by 11:59pm on Friday, May 31.\n- Homework Assignment 1 due by 11:59pm on Monday, June 3.\n:::\n\n## Readings\n\n| 📖 [r4ds, chap. 3](https://r4ds.hadley.nz/data-transform.html)\n| 📖 [Lipset, Some Social Requisites of Democracy](https://www-jstor-org.proxygw.wrlc.org/stable/1951731?seq=8)\n\n## Videos\n\n| 🖥 [Transforming Data with dplyr Verbs](https://youtu.be/ScQD47eJeAE)\n| 🖥 [Summarizing Data by Groups with dplyr Verbs](https://youtu.be/mgBwVzMV-v8)\n\n## Assignments\n\n| 📘 [Module 2 Quiz](https://blackboard.gwu.edu/ultra/courses/_394195_1/outline)\n| 🧮 [Homework 1](../assignments/homework-1.qmd)\n\n\n\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

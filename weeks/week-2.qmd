@@ -4,13 +4,21 @@ subtitle: "Data Wrangling"
 format: html
 ---
 
+```{r}
+#| label: setup
+#| include: false
+
+source("../helper.R")
+```
+
 ::: {.callout-important}
-Quiz due by 11:59pm on `r advdate2(mon, 3)`. 
+- Quiz 2 due by 11:59pm on `r advdate2(fri, 1)`.
+- Homework Assignment 1 due by 11:59pm on `r advdate2(mon, 2)`.
 :::
 
 ## Readings
 
-| 📖 [r4ds, ch 3](https://r4ds.hadley.nz/data-transform.html)
+| 📖 [r4ds, chap. 3](https://r4ds.hadley.nz/data-transform.html)
 | 📖 [Lipset, Some Social Requisites of Democracy](https://www-jstor-org.proxygw.wrlc.org/stable/1951731?seq=8)
 
 ## Videos
@@ -21,10 +29,7 @@ Quiz due by 11:59pm on `r advdate2(mon, 3)`.
 ## Assignments
 
 | 📘 [Module 2 Quiz](https://blackboard.gwu.edu/ultra/courses/_394195_1/outline)
-| 📘 [Homework 1](../assignments/homework-1.qmd)
+| 🧮 [Homework 1](../assignments/homework-1.qmd)
 
-::: {.callout-important}
-Homework Assignment 1 due by 11:59pm on `r advdate2(mon, 4)`. 
-:::
 
 

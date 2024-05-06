@@ -8,19 +8,12 @@ format:
 
 ## Course Information
 
-| **Location**: Duques 151
-| 
+| **Location**: Online
+| **Time**: TR 5:10 - 6:30 p.m.
+
 | **Instructor**: Prof. Emmanuel Teitelbaum
 | Email: [ejt@gwu.edu](mailto:ejt@gwu.edu)
 | Office Hours: [Tuesdays, 3-5 p.m.](https://calendly.com/emmanuel-teitelbaum/15min)
-| 
-| **Teaching Assistant**: Yuchen Zhao
-| Email: [yuchen.zhao1@gwu.edu](mailto:yuchen.zhao1@gwu.edu)
-| Office Hours: Wednesdays, 1:00 - 3:00 p.m.
-| 
-| **Teaching Assistant**: Jeffrey Kuo
-| Email: [jeffkuo@gwu.edu](mailto:jeffkuo@gwu.edu)
-| Office Hours: Wednesdays, 4:00 - 6:00 p.m. 
 | 
 | **Credit Hours**: 3.0.
 

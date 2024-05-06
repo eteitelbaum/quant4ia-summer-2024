@@ -1,5 +1,5 @@
 ---
-title: "Assignment 2"
+title: "Homework 2"
 subtitle: "The Impact of Community Driven Development after Conflict"
 editor: source
 output: html

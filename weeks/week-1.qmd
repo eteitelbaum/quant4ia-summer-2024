@@ -12,15 +12,15 @@ source("../helper.R")
 ```
 
 ::: {.callout-important}
-Quiz due by 11:59pm on `r advdate2(mon, 2)`
+Quiz 1 due by 11:59pm on `r advdate2(fri, 0)`
 :::
 
 ## Readings
 
-| 📖 [r4ds, ch 7](https://r4ds.hadley.nz/data-import)
-| 📖 [r4ds, ch 2](https://r4ds.hadley.nz/data-visualize.html)
-| 📖 [r4ds, 10.1 - 10.4](https://r4ds.hadley.nz/layers.html)
-| 📖 [r4ds, 12.2](https://r4ds.hadley.nz/communication.html)
+| 📖 [r4ds, chap. 7](https://r4ds.hadley.nz/data-import)
+| 📖 [r4ds, chap. 1](https://r4ds.hadley.nz/data-visualize.html)
+| 📖 [r4ds, chap. 9](https://r4ds.hadley.nz/layers.html)
+| 📖 [r4ds, chap. 11](https://r4ds.hadley.nz/communication.html)
 
 ## Videos
 

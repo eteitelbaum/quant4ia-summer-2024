@@ -1,8 +1,8 @@
 {
-  "hash": "48a42ec4e8da139c2017189fe66f473f",
+  "hash": "8967e4c15fb16058d4d531707798f4d6",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Week 4\"\nsubtitle: \"Inference\"\nformat: html\n---\n\n\n\n\nContent coming soon...",
+    "markdown": "---\ntitle: \"Week 4\"\nsubtitle: \"Inference\"\nformat: html\n---\n\n\n\n\n::: {.callout-important}\n- Quiz 4 due by 11:59pm on Friday, June 14\n- Homework Assignment 2 due by 11:59pm on Monday, June 17\n:::\n\n## Readings\n\n| 📖 [IMS, chap. 16](https://openintro-ims.netlify.app/inference-one-prop)\n| 📖 [IMS, chap. 20](https://openintro-ims.netlify.app/inference-two-means)\n| 📖 [Reshaping Institutions](https://academic.oup.com/qje/article-abstract/127/4/1755/1841616)\n\n## Videos\n\n| 🖥 [Hypothesis Testing](https://youtu.be/cn4S3QqEBRg?si=F7XBZ9V2Q1Gm8K3l)\n| 🖥 [Permutation Hypothesis Testing](https://youtu.be/rJ3AZCQuiLw?si=kDzhu_8rKmfDOOUH)\n\n## Assignments\n\n| 📘 [Module 4 Quiz](https://blackboard.gwu.edu/ultra/courses/_394195_1/outline)\n| 🧮 [Homework 2](../assignments/homework-2.qmd)",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

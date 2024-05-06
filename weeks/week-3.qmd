@@ -11,4 +11,22 @@ format: html
 source("../helper.R")
 ```
 
-Content coming soon...
+::: {.callout-important}
+Quiz 3 due by 11:59pm on `r advdate2(fri, 2)`
+:::
+
+## Readings
+
+| 📖 [IMS, chap. 4](https://openintro-ims.netlify.app/explore-categorical) 
+| 📖 [IMS, chap. 5](https://openintro-ims.netlify.app/explore-numerical)
+| 📖 [IMS, chap. 11](https://openintro-ims.netlify.app/foundations-randomization)
+| 📖 [IMS, chap. 12](https://openintro-ims.netlify.app/foundations-bootstrapping)
+
+## Videos
+
+| 🖥 [Discrete and Continuous Variables](https://youtu.be/dOr0NKyD31Q?si=0uZdWQmNwSHcaAnZ)
+| 🖥 [Introduction to Sampling Distributions](https://youtu.be/z0Ry_3_qhDw?si=edotiDI9J7CZ8qE9)
+
+## Assignments
+
+| 📘 [Module 2 Quiz](https://blackboard.gwu.edu/ultra/courses/_394195_1/outline)

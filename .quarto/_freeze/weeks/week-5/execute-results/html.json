@@ -1,8 +1,8 @@
 {
-  "hash": "a02ff0c8f40287ca065826c3552265df",
+  "hash": "e812422c2dd508a36911f5b0a8fb5e09",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Week 5\"\nsubtitle: \"Linear Regression\"\nformat: html\n---\n\n\n\n\nContent coming soon...\n",
+    "markdown": "---\ntitle: \"Week 5\"\nsubtitle: \"Linear Regression\"\nformat: html\n---\n\n\n\n\n::: {.callout-important}\nQuiz 5 due by 11:59pm on Friday, June 21\n:::\n\n## Readings\n\n| 📖 [IMS, chap. 7](https://openintro-ims.netlify.app/model-slr)\n| 📖 [IMS, chap. 8](https://openintro-ims.netlify.app/model-mlr)\n\n## Videos\n\n| 🖥 [Linear Regressin with One Variable](https://youtu.be/dLc-lfEEYss?si=CtjssYXoz4tzCMxM)\n| 🖥 [Linear Regression with Multiple Variables](https://youtu.be/jXg0vU0y1ak?si=aq6DdZcDbGBxNPbw)\n\n## Assignments\n\n| 📘 [Module 5 Quiz](https://blackboard.gwu.edu/ultra/courses/_394195_1/outline)\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

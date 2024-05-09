@@ -13,7 +13,7 @@ execute:
 
 ## Group, summarize and arrange 
 
-{{< video https://youtu.be/mgBwVzMV-v8 title='Group, Summarize and Arrange' >}}
+{{< video https://youtu.be/OmmSRcLhORg title='Group, Summarize and Arrange' >}}
 
 Now that we have completed some wrangling, let's do something with our data. A common sequence in data science is [group by()](https://dplyr.tidyverse.org/reference/group_by.html), [summarize()](https://dplyr.tidyverse.org/reference/summarise.html) and [arrange()](https://dplyr.tidyverse.org/reference/arrange.html). First, we group the data by certain value or category. Then we summarize it by applying a function like `min()`, `max()`, `mean()`, `median()` or `sd()`. Finally, we order the data according to column values. 
 

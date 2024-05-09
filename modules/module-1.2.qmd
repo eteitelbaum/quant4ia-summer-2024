@@ -35,7 +35,7 @@ In this module we are going to learn how to make line charts and scatter plots. 
 
 ## Line charts
 
-{{< video https://youtu.be/PnmQ2MFQpIc 'Making Line Charts'>}}
+{{< video https://youtu.be/6WOStwopO7g 'Making Line Charts'>}}
 
 Now let's create a line chart. Line charts are usually the best option when we want to illustrate trends in our data. For this visualization, we will try to illustrate Samuel Huntington's waves of democracy by showing how countries representing each of the three waves. The U.S. represents the first wave, Japan the second wave starting with the allied victory in WWII, and Portugal represents the first country to transition in the third wave. 
 
@@ -83,7 +83,7 @@ ggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +
 
 ## Scatter plots
 
-{{< video https://youtu.be/FiosjUVyfLM title = 'Making Scatter Plots'>}}
+{{< video https://youtu.be/PPDxYesSN4A title = 'Making Scatter Plots'>}}
 
 The last thing we are going to do in this lesson is to create a scatter plot. We use scatter plots in order to illustrate how two variables relate to each other (or not). In this example, we are going to illustrating modernization theory, which predicts a positive relationship between wealth and democracy, while also incorporating levels of women's representation into our analysis.  
 

@@ -149,5 +149,11 @@
   },
   "weeks/getting-started.qmd": {
     "getting-started.html": "0f694193"
+  },
+  "modules/module-1.11.qmd": {
+    "module-1.11.html": "b4ee11e4"
+  },
+  "modules/getting-started.1.qmd": {
+    "getting-started.1.html": "ef121744"
   }
 }

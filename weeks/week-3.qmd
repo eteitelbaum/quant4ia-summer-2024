@@ -29,4 +29,4 @@ Quiz 3 due by 11:59pm on `r advdate2(fri, 2)`
 
 ## Assignments
 
-| 📘 [Module 2 Quiz](https://blackboard.gwu.edu/ultra/courses/_394195_1/outline)
+| 📘 [Module 3 Quiz](https://blackboard.gwu.edu/ultra/courses/_403120_1/outline/assessment/test/_13850330_1?courseId=_403120_1&gradeitemView=details)

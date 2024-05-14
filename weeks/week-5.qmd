@@ -27,4 +27,4 @@ Quiz 5 due by 11:59pm on `r advdate2(fri, 4)`
 
 ## Assignments
 
-| 📘 [Module 5 Quiz](https://blackboard.gwu.edu/ultra/courses/_394195_1/outline)
+| 📘 [Module 5 Quiz](https://blackboard.gwu.edu/ultra/courses/_403120_1/outline/assessment/test/_13850332_1?courseId=_403120_1&gradeitemView=details)

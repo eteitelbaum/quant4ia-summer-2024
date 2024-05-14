@@ -1,8 +1,8 @@
 {
-  "hash": "e812422c2dd508a36911f5b0a8fb5e09",
+  "hash": "de3585a3705a9a0b6fed292c629420fe",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Week 5\"\nsubtitle: \"Linear Regression\"\nformat: html\n---\n\n\n\n\n::: {.callout-important}\nQuiz 5 due by 11:59pm on Friday, June 21\n:::\n\n## Readings\n\n| 📖 [IMS, chap. 7](https://openintro-ims.netlify.app/model-slr)\n| 📖 [IMS, chap. 8](https://openintro-ims.netlify.app/model-mlr)\n\n## Videos\n\n| 🖥 [Linear Regressin with One Variable](https://youtu.be/dLc-lfEEYss?si=CtjssYXoz4tzCMxM)\n| 🖥 [Linear Regression with Multiple Variables](https://youtu.be/jXg0vU0y1ak?si=aq6DdZcDbGBxNPbw)\n\n## Assignments\n\n| 📘 [Module 5 Quiz](https://blackboard.gwu.edu/ultra/courses/_394195_1/outline)\n",
+    "markdown": "---\ntitle: \"Week 5\"\nsubtitle: \"Linear Regression\"\nformat: html\n---\n\n\n\n\n::: {.callout-important}\nQuiz 5 due by 11:59pm on Friday, June 21\n:::\n\n## Readings\n\n| 📖 [IMS, chap. 7](https://openintro-ims.netlify.app/model-slr)\n| 📖 [IMS, chap. 8](https://openintro-ims.netlify.app/model-mlr)\n\n## Videos\n\n| 🖥 [Linear Regressin with One Variable](https://youtu.be/dLc-lfEEYss?si=CtjssYXoz4tzCMxM)\n| 🖥 [Linear Regression with Multiple Variables](https://youtu.be/jXg0vU0y1ak?si=aq6DdZcDbGBxNPbw)\n\n## Assignments\n\n| 📘 [Module 5 Quiz](https://blackboard.gwu.edu/ultra/courses/_403120_1/outline/assessment/test/_13850332_1?courseId=_403120_1&gradeitemView=details)\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

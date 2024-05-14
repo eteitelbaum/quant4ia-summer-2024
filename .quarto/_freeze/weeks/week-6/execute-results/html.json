@@ -1,8 +1,8 @@
 {
-  "hash": "95f47f3c1b878a712ffc2f77ab3a3c4b",
+  "hash": "a9f991cb0d97dc7580fb67ea41983e54",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Week 6\"\nsubtitle: \"Logistic Regression\"\nformat: html\n---\n\n\n\n\n::: {.callout-important}\n- Quiz 6 due by 11:59pm on Friday, June 28\n- Homework Assignment 3 due by 11:59pm on Saturday, June 29\n- Final Project due by 11:59pm on Saturday, June 29\n:::\n\n## Readings\n\n| 📖 [IMS, chap. 9](https://openintro-ims.netlify.app/model-logistic)\n\n## Videos\n\n| 🖥 [Logistic Regression](https://youtu.be/xuTiAW0OR40?si=tSYvPmJKR-cvNtAX)\n| 🖥 [Display Regression Results with Broom](https://youtu.be/upn8dlhvbns)\n| 🖥 [Make a Regression Table with Model Summary](https://youtu.be/My6_X6x5TZw)\n| 🖥 [Make a Coefficient Plot](https://youtu.be/gif_wkqyub8)\n\n## Assignments\n\n| 📘 [Module 6 Quiz](https://blackboard.gwu.edu/ultra/courses/_394195_1/outline)\n| 🧮 [Homework 3](../assignments/homework-3.qmd)\n| 🖋️ [Final Project](../project/project-description.qmd)\n",
+    "markdown": "---\ntitle: \"Week 6\"\nsubtitle: \"Logistic Regression\"\nformat: html\n---\n\n\n\n\n::: {.callout-important}\n- Quiz 6 due by 11:59pm on Friday, June 28\n- Homework Assignment 3 due by 11:59pm on Saturday, June 29\n- Final Project due by 11:59pm on Saturday, June 29\n:::\n\n## Readings\n\n| 📖 [IMS, chap. 9](https://openintro-ims.netlify.app/model-logistic)\n\n## Videos\n\n| 🖥 [Logistic Regression](https://youtu.be/xuTiAW0OR40?si=tSYvPmJKR-cvNtAX)\n| 🖥 [Display Regression Results with Broom](https://youtu.be/upn8dlhvbns)\n| 🖥 [Make a Regression Table with Model Summary](https://youtu.be/My6_X6x5TZw)\n| 🖥 [Make a Coefficient Plot](https://youtu.be/gif_wkqyub8)\n\n## Assignments\n\n| 📘 [Module 6 Quiz](https://blackboard.gwu.edu/ultra/courses/_403120_1/outline/assessment/test/_13850333_1?courseId=_403120_1&gradeitemView=details)\n| 🧮 [Homework 3](../assignments/homework-3.qmd)\n| 🖋️ [Final Project](../project/project-description.qmd)\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

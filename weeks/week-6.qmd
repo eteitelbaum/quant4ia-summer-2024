@@ -30,6 +30,6 @@ source("../helper.R")
 
 ## Assignments
 
-| 📘 [Module 6 Quiz](https://blackboard.gwu.edu/ultra/courses/_394195_1/outline)
+| 📘 [Module 6 Quiz](https://blackboard.gwu.edu/ultra/courses/_403120_1/outline/assessment/test/_13850333_1?courseId=_403120_1&gradeitemView=details)
 | 🧮 [Homework 3](../assignments/homework-3.qmd)
 | 🖋️ [Final Project](../project/project-description.qmd)

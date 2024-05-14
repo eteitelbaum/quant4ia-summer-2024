@@ -1,8 +1,8 @@
 {
-  "hash": "767bd522e94df7659c4fe312dbda0a7a",
+  "hash": "70b85c68b99c8b2401adc5f839f3af5d",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Week 3\"\nsubtitle: \"Exploratory Data Anlysis\"\nformat: html\n---\n\n\n\n\n::: {.callout-important}\nQuiz 3 due by 11:59pm on Friday, June 7\n:::\n\n## Readings\n\n| 📖 [IMS, chap. 4](https://openintro-ims.netlify.app/explore-categorical) \n| 📖 [IMS, chap. 5](https://openintro-ims.netlify.app/explore-numerical)\n| 📖 [IMS, chap. 11](https://openintro-ims.netlify.app/foundations-randomization)\n| 📖 [IMS, chap. 12](https://openintro-ims.netlify.app/foundations-bootstrapping)\n\n## Videos\n\n| 🖥 [Discrete and Continuous Variables](https://youtu.be/dOr0NKyD31Q?si=0uZdWQmNwSHcaAnZ)\n| 🖥 [Introduction to Sampling Distributions](https://youtu.be/z0Ry_3_qhDw?si=edotiDI9J7CZ8qE9)\n\n## Assignments\n\n| 📘 [Module 2 Quiz](https://blackboard.gwu.edu/ultra/courses/_394195_1/outline)",
+    "markdown": "---\ntitle: \"Week 3\"\nsubtitle: \"Exploratory Data Anlysis\"\nformat: html\n---\n\n\n\n\n::: {.callout-important}\nQuiz 3 due by 11:59pm on Friday, June 7\n:::\n\n## Readings\n\n| 📖 [IMS, chap. 4](https://openintro-ims.netlify.app/explore-categorical) \n| 📖 [IMS, chap. 5](https://openintro-ims.netlify.app/explore-numerical)\n| 📖 [IMS, chap. 11](https://openintro-ims.netlify.app/foundations-randomization)\n| 📖 [IMS, chap. 12](https://openintro-ims.netlify.app/foundations-bootstrapping)\n\n## Videos\n\n| 🖥 [Discrete and Continuous Variables](https://youtu.be/dOr0NKyD31Q?si=0uZdWQmNwSHcaAnZ)\n| 🖥 [Introduction to Sampling Distributions](https://youtu.be/z0Ry_3_qhDw?si=edotiDI9J7CZ8qE9)\n\n## Assignments\n\n| 📘 [Module 3 Quiz](https://blackboard.gwu.edu/ultra/courses/_403120_1/outline/assessment/test/_13850330_1?courseId=_403120_1&gradeitemView=details)",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

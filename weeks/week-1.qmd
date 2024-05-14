@@ -31,6 +31,6 @@ Quiz 1 due by 11:59pm on `r advdate2(fri, 0)`
 
 ## Assignments
 
-| 📘 [Module 1 Quiz](https://blackboard.gwu.edu/ultra/courses/_395476_1/cl/outline)
+| 📘 [Module 1 Quiz](https://blackboard.gwu.edu/ultra/courses/_403120_1/outline/assessment/test/_13850328_1?courseId=_403120_1&gradeitemView=details)
 
 

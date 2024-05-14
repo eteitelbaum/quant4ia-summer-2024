@@ -155,5 +155,20 @@
   },
   "modules/getting-started.1.qmd": {
     "getting-started.1.html": "ef121744"
+  },
+  "modules/module-1.2zz.qmd": {
+    "module-1.2zz.html": "d12d30ad"
+  },
+  "modules/getting-startedzz.qmd": {
+    "getting-startedzz.html": "27e4138c"
+  },
+  "modules/module-2.1zz.qmd": {
+    "module-2.1zz.html": "a2ab9fc0"
+  },
+  "modules/module-1.1zz.qmd": {
+    "module-1.1zz.html": "190946a9"
+  },
+  "modules/module-2.2zz.qmd": {
+    "module-2.2zz.html": "c40be5f5"
   }
 }

@@ -10,14 +10,6 @@ Your goal in this project is to apply the skills and tools we have learned this 
 
 *You are free to select your own question and your own dataset.* This is your chance to practice the skills we are using, apply them to a question of interest to you, and to work on generating conclusions from data that can inform policy decision-making in International Affairs.
 
-## Timeline
-
-- In class on April 23, please come to class ready to discuss your research question and dataset (details below). This will be an opportunity for you to make sure you are on the right track with the question you have selected and the data you are working with.
-
-- On April 23, we will also discuss some advanced formatting techniques and how to post your project to [Quarto Pub](https://quartopub.com/).
-
-- The project is **due on May 10** by 11:59 p.m., however you are free to submit the project anytime before then.
-
 ## Group or Individual Work
 
 -   You may work in groups of up to 3 members. If you work in a group, you must also submit a paragraph indicating how each of the group members participated and what aspects of the project they contributed to. Our expectation is that all group members will actively contribute.
